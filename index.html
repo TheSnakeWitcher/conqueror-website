@@ -26,9 +26,31 @@
            <img class="logoimg" src="./images/logo.png" alt="Conqueror Logo"> Conqueror
          </div>
         <div class="nav-links">
+          <div class="language-selector">
+            <button class="language-button" id="languageButton">
+              <div class="selected-language">
+                <span class="flag" id="selectedFlag">🇪🇸</span>
+                <span class="language-name" id="selectedName">Español</span>
+              </div>
+              <div class="chevron"></div>
+            </button>
+
+            <div class="language-dropdown" id="languageDropdown">
+              <div class="language-option selected" data-code="es" data-flag="🇪🇸" data-name="Español">
+                <span class="option-flag">🇪🇸</span>
+                <span class="option-name">Español</span>
+                <div class="checkmark">✓</div>
+              </div>
+              <div class="language-option" data-code="en" data-flag="🇺🇸" data-name="English">
+                <span class="option-flag">🇺🇸</span>
+                <span class="option-name">English</span>
+                <div class="checkmark">✓</div>
+              </div>
+            </div>
+          </div>
           <a href="http://wiki.conqueror.lifestyle" target="_blank">Wiki</a>
-          <a href="https://linktr.ee/conquerorlifestyle" target="_blank">Contacto</a>
-          <a href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button" style="color: white;">Quiero mi miswak gratis</a>
+          <a data-i18n="contact" href="https://linktr.ee/conquerorlifestyle" target="_blank">Contacto</a>
+          <a data-i18n="cta1" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button" style="color: white;">Quiero mi miswak gratis</a>
         </div>
       </nav>
     </div>
@@ -39,12 +61,12 @@
     <div class="container">
       <div class="hero-content">
         <div class="hero-text">
-          <h1 class="hero-title">Dientes saludables libres de estres</h1>
-          <p class="hero-description">
+          <h1 data-i18n="title" class="hero-title">Dientes saludables libres de estres</h1>
+          <p data-i18n="description" class="hero-description">
             Miswak, un cepillo de dientes natural para los que cuidan su salud y el medio ambiente.
             Vuelvete miembro y recibe tu primer miswak gratis ! Ademas una caja de 3 miswaks en tu buzon cada mes.
           </p>
-          <a href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button">Quiero probar gratis por 14 dias</a>
+          <a data-i18n="cta2" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button">Quiero probar gratis por 14 dias</a>
           
           <div class="review-section">
             <div class="review-avatars">
@@ -64,7 +86,7 @@
         </div>
         
         <div class="hero-image">
-          <img src="./images/miswak.png" alt="Premium Wireless Headphones">
+          <img src="./images/miswak.png" alt="Premium Miswak">
         </div>
       </div>
     </div>
@@ -73,32 +95,32 @@
   <section class="pain-points-section">
     <div class="container">
       <div class="pain-points-content">
-        <h2 class="section-title">La salud de tus dientes es demasiado importante para descuidarla.</h2>
+        <h2 data-i18n="problems-title" class="section-title">La salud de tus dientes es demasiado importante para descuidarla.</h2>
         
         <div class="problems-list">
           <div class="problem-item">
             <span class="problem-icon">✕</span>
-            <p class="problem-text">Los cepillos tradicionales introducen microplasticos en tu cuerpo, con su uso prolongado acumulan bacterias o te lastiman las encias</p>
+            <p data-i18n="problem1" class="problem-text">Los cepillos tradicionales introducen microplasticos en tu cuerpo, con su uso prolongado acumulan bacterias o te lastiman las encias</p>
           </div>
           
           <div class="problem-item">
             <span class="problem-icon">✕</span>
-            <p class="problem-text">La pasta presenta quimicos agresivos como SLS o plomo</p>
+            <p data-i18n="problem2" class="problem-text">La pasta presenta quimicos agresivos como SLS o plomo</p>
           </div>
           
           <div class="problem-item">
             <span class="problem-icon">✕</span>
-            <p class="problem-text">El hilo dental de plastico hace que acumules PFAS que son disruptores endocrinos</p>
+            <p data-i18n="problem3" class="problem-text">El hilo dental de plastico hace que acumules PFAS que son disruptores endocrinos</p>
           </div>
 
           <div class="problem-item">
             <span class="problem-icon">✕</span>
-            <p class="problem-text">Gastas en productos dentales que contaminan el medio ambiente</p>
+            <p data-i18n="problem4" class="problem-text">Gastas en productos dentales que contaminan el medio ambiente</p>
           </div>
 
           <div class="problem-item">
             <span class="problem-icon">✕</span>
-            <p class="problem-text">Sabes que deberías mejorar tu higiene bucal pero no tomas acción</p>
+            <p data-i18n="problem5" class="problem-text">Sabes que deberías mejorar tu higiene bucal pero no tomas acción</p>
           </div>
         </div>
       </div>
@@ -110,35 +132,35 @@
     
     <!-- benefits -->
     <section class="benefits-section">
-      <h2 class="section-title">Beneficios del Miswak</h2>
+      <h2 data-i18n="benefits-title" class="section-title">Beneficios del Miswak</h2>
       <div class="benefits-grid">
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="fas fa-tooth"></i>
           </div>
-          <h3 class="benefit-title">Limpieza Superior, encias fuertes y menors sensibilidad</h3>
-          <p>Las fibras del Miswak tienen efecto anticariogenico y antiplaca, combaten gingivitis, hongos y bacterias ofreciendo una limpieza eficiente y completa</p>
+          <h3 data-i18n="benefit1-title" class="benefit-title">Limpieza Superior, encias fuertes y menors sensibilidad</h3>
+          <p data-i18n="benefit1-explanation">Las fibras del Miswak tienen efecto anticariogenico y antiplaca, combaten gingivitis, hongos y bacterias ofreciendo una limpieza eficiente y completa</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="fas fa-smile"></i>
           </div>
-          <h3 class="benefit-title">Dientes naturalmente blancos</h3>
-          <p>Los minerales naturales ayudan a eliminar manchas y blanquear los dientes no solo sin dañar el esmalte, sino fortaleciendolo</p>
+          <h3 data-i18n="benefit2-title" class="benefit-title">Dientes naturalmente blancos</h3>
+          <p data-i18n="benefit2-explanation">Los minerales naturales ayudan a eliminar manchas y blanquear los dientes no solo sin dañar el esmalte, sino fortaleciendolo</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="fas fa-wind"></i>
           </div>
-          <h3 class="benefit-title">Aliento Fresco</h3>
-          <p>Los aceites esenciales naturales proporcionan un aliento fresco y su uso estimula la produccion de saliva previniendo la sequedad de la boca</p>
+          <h3 data-i18n="benefit3-title" class="benefit-title">Aliento Fresco</h3>
+          <p data-i18n="benefit3-explanation">Los aceites esenciales naturales proporcionan un aliento fresco y su uso estimula la produccion de saliva previniendo la sequedad de la boca</p>
         </div>
         <div class="benefit-card">
           <div class="benefit-icon">
             <i class="fas fa-seedling"></i>
           </div>
-          <h3 class="benefit-title">100% Natural</h3>
-          <p>Libre de plásticos, químicos y aditivos artificiales. Una alternativa ecologica, biodegradable y respetuosa con el medio ambiente</p>
+          <h3 data-i18n="benefit4-title" class="benefit-title">100% Natural</h3>
+          <p data-i18n="benefit4-explanation">Libre de plásticos, químicos y aditivos artificiales. Una alternativa ecologica, biodegradable y respetuosa con el medio ambiente</p>
         </div>
       </div>
     </section>
@@ -146,7 +168,7 @@
     <!-- How it Works -->
     <section class="how-it-works-section">
       <div class="container">
-        <h2 class="section-title">Cómo Funciona</h2>
+        <h2 data-i18n="how-title" class="section-title">Cómo Funciona</h2>
         
         <div class="timeline-container">
           <div class="timeline-step">
@@ -154,8 +176,8 @@
               <div class="step-number">01</div>
             </div>
             <div class="timeline-content">
-              <h3 class="step-title">Reserva tu Miswak</h3>
-              <p class="step-description">Subscribete, tu reserva incluye tu primer miswak gratis directo a tu puerta</p>
+              <h3 data-i18n="how1-title" class="step-title">Reserva tu Miswak</h3>
+              <p data-i18n="how1-description" class="step-description">Subscribete, tu reserva incluye tu primer miswak gratis directo a tu puerta</p>
             </div>
           </div>
           
@@ -164,8 +186,8 @@
               <div class="step-number">02</div>
             </div>
             <div class="timeline-content">
-              <h3 class="step-title">Recibe tu producto</h3>
-              <p class="step-description">Luego, se te contactará para coordinar la entrega de tu miswak gratis</p>
+              <h3 data-i18n="how2-title" class="step-title">Recibe tu producto</h3>
+              <p data-i18n="how2-description" class="step-description">Luego, se te contactará para coordinar la entrega de tu miswak gratis</p>
             </div>
           </div>
           
@@ -174,8 +196,8 @@
               <div class="step-number">03</div>
             </div>
             <div class="timeline-content">
-              <h3 class="step-title">Disfruta</h3>
-              <p class="step-description">Recibe tu caja de 3 miswaks mensualmente y experimenta sus beneficios naturales con dientes más limpios, encías más saludables y aliento fresco duradero</p>
+              <h3 data-i18n="how3-title" class="step-title">Disfruta</h3>
+              <p data-i18n="how3-description" class="step-description">Recibe tu caja de 3 miswaks mensualmente y experimenta sus beneficios naturales con dientes más limpios, encías más saludables y aliento fresco duradero</p>
             </div>
           </div>
         </div>
@@ -186,7 +208,7 @@
     <!-- testimonials -->
     <section class="testimonials-section">
       <div class="container">
-        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <h2 data-i18n="testimonials-title" class="section-title">Lo que dicen nuestros clientes</h2>
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="stars">★★★★★</div>
@@ -210,22 +232,22 @@
     <!-- FAQs -->
     <section class="faq-section">
       <div class="container">
-        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <h2 data-i18n="faqs-title" class="section-title">Preguntas Frecuentes</h2>
         <div class="faq-item">
-          <h3 class="faq-question">¿Cómo se usa el Miswak?</h3>
-          <p class="faq-answer">Simplemente pele 1-2 cm de la corteza del extremo, mastique ligeramente hasta formar "cerdas" naturales y cepille sus dientes como lo haría con un cepillo normal. No requiere pasta dental.</p>
+          <h3 data-i18n="faq1-title" class="faq-question">¿Cómo se usa el Miswak?</h3>
+          <p data-i18n="faq1-answer" class="faq-answer">Simplemente pele 1-2 cm de la corteza del extremo, mastique ligeramente hasta formar "cerdas" naturales y cepille sus dientes como lo haría con un cepillo normal. No requiere pasta dental.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">¿Cuánto dura cada Miswak?</h3>
-          <p class="faq-answer">Con un uso adecuado, cada Miswak puede durar alrededor de 2 semanas. Cuando las "cerdas" se desgastan, simplemente corte ese extremo y prepare uno nuevo.</p>
+          <h3 data-i18n="faq2-title" class="faq-question">¿Cuánto dura cada Miswak?</h3>
+          <p data-i18n="faq2-answer" class="faq-answer">Con un uso adecuado, cada Miswak puede durar alrededor de 2 semanas. Cuando las "cerdas" se desgastan, simplemente corte ese extremo y prepare uno nuevo.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">¿Reemplaza completamente mi cepillo de dientes?</h3>
-          <p class="faq-answer">Sí, el Miswak puede reemplazar por completo su cepillo y pasta de dientes. De hecho, estudios científicos han demostrado que es tan efectivo o más que los cepillos convencionales.</p>
+          <h3 data-i18n="faq3-title" class="faq-question">¿Reemplaza completamente mi cepillo de dientes?</h3>
+          <p data-i18n="faq3-answer" class="faq-answer">Sí, el Miswak puede reemplazar por completo su cepillo y pasta de dientes. De hecho, estudios científicos han demostrado que es tan efectivo o más que los cepillos convencionales.</p>
         </div>
         <div class="faq-item">
-          <h3 class="faq-question">¿Cómo debo almacenarlo?</h3>
-          <p class="faq-answer">Para mantener su frescura, guarde el Miswak en un lugar seco y ventilado. Incluimos un estuche especial para que pueda llevarlo cómodamente.</p>
+          <h3 data-i18n="faq4-title" class="faq-question">¿Cómo debo almacenarlo?</h3>
+          <p data-i18n="faq4-answer" class="faq-answer">Para mantener su frescura, guarde el Miswak en un lugar seco y ventilado. Incluimos un estuche especial para que pueda llevarlo cómodamente.</p>
         </div>
       </div>
     </section>
@@ -235,13 +257,13 @@
   <section class="product-section">
     <div class="product-images">
       <div class="main-image">
-        <img src="./images/miswak.png" alt="Premium Wireless Headphones">
+        <img src="./images/miswak.png" alt="Premium Miswak">
       </div>
     </div>
     
     <div class="product-info">
       
-      <h1 class="product-title">Caja de 3 Miswaks/Siwak - Cepillos de Dientes Naturales</h1>
+      <h1 data-i18n="product-title" class="product-title">Caja de 3 Miswaks/Siwak - Cepillos de Dientes Naturales</h1>
       
       <div class="product-rating">
         <div class="stars">★★★★★</div>
@@ -249,7 +271,7 @@
       </div>
       
       <div class="product-description">
-        <p>
+        <p data-i18n="product-description">
           El miswak es una herramienta natural y efectiva para la higiene bucal, respaldada por evidencia científica que confirma sus propiedades y
           ha demostrado es comparable o incluso superior a los métodos convencionales de higiene bucal en ciertos aspectos. Sus efectos beneficiosos
           se deben a una combinación de acciones mecánicas y químicas proporcionadas por sus componentes naturales
@@ -258,14 +280,14 @@
       
       
       <a class="action-buttons" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank">
-        <button class="btn btn-primary">Quiero probar gratis por 14 dias</button>
+        <button data-i18n="cta3" class="btn btn-primary">Quiero probar gratis por 14 dias</button>
       </a>
 
       <div class="delivery-info">
-        <p><i class="fas fa-shipping-fast"></i> Envío gratis</p>
-        <p><i class="fas fa-tree"></i> Producto 100% natural y orgánico sin agregados</p>
-        <p><i class="fas fa-shield-alt"></i> Pago seguro </p>
-        <p><i class="fas fa-undo-alt"></i>Recibe entregas mensualmente, cancela en cualquier momento</p>
+        <p> <i class="fas fa-shipping-fast"> </i> Envío gratis</p>
+        <p> <i class="fas fa-tree"> </i> Producto 100% natural y orgánico sin agregados</p>
+        <p> <i class="fas fa-shield-alt"> </i> Pago seguro </p>
+        <p> <i class="fas fa-undo-alt"> </i>Recibe entregas mensualmente, cancela en cualquier momento</p>
       </div>
 
       </div>
