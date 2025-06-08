@@ -165,14 +165,16 @@ const translations = {
 
         // faqs
         "faqs-title": "Preguntas Frecuentes",
-        "faq1-title": "¿Cómo se usa el Miswak?",
-        "faq1-answer": "Simplemente pele 1-2 cm de la corteza del extremo, mastique ligeramente hasta formar cerdas naturales y cepille sus dientes como lo haría con un cepillo normal. No requiere pasta dental",
-        "faq2-title": "¿Cuánto dura cada Miswak?",
-        "faq2-answer": "Con un uso adecuado, cada Miswak puede durar alrededor de 2 semanas. Cuando las cerdas se desgastan, simplemente corte ese extremo y prepare uno nuevo",
-        "faq3-title": "¿Reemplaza completamente mi cepillo de dientes?",
-        "faq3-answer": "Sí, el Miswak puede reemplazar por completo su cepillo y pasta de dientes. De hecho, estudios científicos han demostrado que es tan efectivo o más que los cepillos convencionales.",
-        "faq4-title": "¿Cómo debo almacenarlo?",
-        "faq4-answer": "Para mantener su frescura, guarde el Miswak en un lugar seco y ventilado. Incluimos un estuche especial para que pueda llevarlo cómodamente.",
+        "faq1-title": "¿Cuando llega mi Miswak gratis?",
+        "faq1-answer": "Tu Miswak gratis llega durante el periodo de prueba directo a tu puerta",
+        "faq2-title": "¿Cómo se usa el Miswak?",
+        "faq2-answer": "Simplemente pele 1-2 cm de la corteza del extremo, mastique ligeramente hasta formar cerdas naturales y cepille sus dientes como lo haría con un cepillo normal. No requiere pasta dental",
+        "faq3-title": "¿Cuánto dura cada Miswak?",
+        "faq3-answer": "Con un uso adecuado, cada Miswak puede durar alrededor de 2 semanas. Cuando las cerdas se desgastan, simplemente corte ese extremo y prepare uno nuevo",
+        "faq4-title": "¿Reemplaza completamente mi cepillo de dientes?",
+        "faq4-answer": "Sí, el Miswak puede reemplazar por completo su cepillo y pasta de dientes. De hecho, estudios científicos han demostrado que es tan efectivo o más que los cepillos convencionales.",
+        "faq5-title": "¿Cómo debo almacenarlo?",
+        "faq5-answer": "Para mantener su frescura, guarde el Miswak en un lugar seco y ventilado",
 
         // product
         "product-title": "Caja de 3 Miswaks/Siwak - Cepillos de Dientes Naturales",
@@ -227,14 +229,16 @@ const translations = {
 
         // faqs
         "faqs-title": "Frequently Asked Questions",
-        "faq1-title": "How is Miswak used?",
-        "faq1-answer": "Simply peel 1-2 cm of the bark off the end, chew lightly to form natural bristles and brush your teeth as you would with a normal toothbrush. No toothpaste required",
-        "faq2-title": "How long does each Miswak last?",
-        "faq2-answer": "With proper use, each Miswak can last about 2 weeks. When the bristles wear out, simply cut off that end and prepare a new one",
-        "faq3-title": "Does it completely replace my toothbrush?",
-        "faq3-answer": "Yes, Miswak can completely replace your toothbrush and toothpaste. In fact, scientific studies have shown it to be as effective or more effective than conventional toothbrushes",
-        "faq4-title": "How should I store it?",
-        "faq4-answer": "To maintain its freshness, store the Miswak in a dry and ventilated place. We include a special carrying case so you can carry it comfortably",
+        "faq1-title": "When does my free Miswak arrive?",
+        "faq1-answer": "Your free Miswak arrives during the trial period directly to your door",
+        "faq2-title": "How is Miswak used?",
+        "faq2-answer": "Simply peel 1-2 cm of the bark off the end, chew lightly to form natural bristles and brush your teeth as you would with a normal toothbrush. No toothpaste required",
+        "faq3-title": "How long does each Miswak last?",
+        "faq3-answer": "With proper use, each Miswak can last about 2 weeks. When the bristles wear out, simply cut off that end and prepare a new one",
+        "faq4-title": "Does it completely replace my toothbrush?",
+        "faq4-answer": "Yes, Miswak can completely replace your toothbrush and toothpaste. In fact, scientific studies have shown it to be as effective or more effective than conventional toothbrushes",
+        "faq5-title": "How should I store it?",
+        "faq5-answer": "To maintain its freshness, store the Miswak in a dry and ventilated place",
 
         // product
         "product-title": "Box of 3 Miswaks/Siwak - Natural Toothbrushes",
