@@ -33,9 +33,11 @@
       document.addEventListener("DOMContentLoaded", () => {
           const ctas = document.getElementsByClassName("cta")
           for (let cta of ctas) {
+              console.log('before cta')
               cta.addEventListener('click', () => {
-                 fbq('track', 'InitiateCheckout')
+              fbq('track', 'InitiateCheckout', {test_event_code: 'TEST14583'})
               })
+              console.log('after cta')
           }
       })
   </script>
