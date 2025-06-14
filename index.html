@@ -34,11 +34,8 @@
           const ctas = document.getElementsByClassName("cta")
           for (let cta of ctas) {
               cta.addEventListener('click', () => {
-                  console.log('before checkout')
-                  fbq('track', 'InitiateCheckout', {test_event_code: 'TEST14583'})
-                  console.log('after checkout')
+                  fbq('track', 'InitiateCheckout')
               })
-              console.log('listener added')
           }
       })
   </script>
