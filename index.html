@@ -28,23 +28,20 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '666759912447103');
       fbq('track', 'PageView');
+
+      <!-- InitiateCheckout tracking -->
+      document.addEventListener("DOMContentLoaded", () => {
+          const ctas = document.getElementsByClassName("cta")
+          for (let cta of ctas) {
+              cta.addEventListener('click', () => {
+                 fbq('track', 'InitiateCheckout')
+              })
+          }
+      })
   </script>
   <noscript>
       <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=666759912447103&ev=PageView&noscript=1"/>
   </noscript>
-
-  <!-- InitiateCheckout tracking -->
-  <script>
-     document.addEventListener("DOMContentLoaded", () => {
-         const ctas = document.getElementsByClassName("cta")
-         for (let cta of ctas) {
-             cta.addEventListener('click', () => {
-                fbq('track', 'InitiateCheckout')
-             })
-         }
-     })
-  </script>
-
 </head>
 
 <body>
