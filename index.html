@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="index.css">
   <script src="index.js"></script>
+
   <!-- Meta Pixel Code -->
   <script>
       !function(f,b,e,v,n,t,s)
@@ -31,6 +32,18 @@
   <noscript>
       <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=666759912447103&ev=PageView&noscript=1"/>
   </noscript>
+
+  <!-- InitiateCheckout tracking -->
+  <script>
+     document.addEventListener("DOMContentLoaded", () => {
+         const ctas = document.getElementsByClassName("cta")
+         for (let cta of ctas) {
+             cta.addEventListener('click', () => {
+                fbq('track', 'InitiateCheckout')
+             })
+         }
+     })
+  </script>
 
 </head>
 
@@ -67,7 +80,7 @@
           </div>
           <a href="http://wiki.conqueror.lifestyle" target="_blank">Wiki</a>
           <a data-i18n="contact" href="https://linktr.ee/conquerorlifestyle" target="_blank">Contacto</a>
-          <a data-i18n="cta1" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button" style="color: white;">Quiero mi miswak gratis</a>
+          <a data-i18n="cta1" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button cta" style="color: white;">Quiero mi miswak gratis</a>
         </div>
       </nav>
     </div>
@@ -83,24 +96,24 @@
             Miswak, un cepillo de dientes natural para los que cuidan su salud y el medio ambiente.
             Vuelvete miembro y recibe tu primer miswak gratis ! Ademas una caja de 3 miswaks en tu buzon cada mes.
           </p>
-          <a data-i18n="cta2" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button">Quiero probar gratis por 14 dias</a>
+          <a data-i18n="cta2" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank" class="primary-button cta">Quiero probar gratis por 14 dias</a>
           
-          <div class="review-section">
+          <a class="review-section" href="https://linktr.ee/conquerorlifestyle" style="color: transparent" target="_blank">
             <div class="review-avatars">
               <div class="review-avatar">
-                <img src="/api/placeholder/35/35" alt="User avatar">
+                <img src="./images/reviewer1.jpg" alt="User avatar">
               </div>
               <div class="review-avatar">
-                <img src="/api/placeholder/35/35" alt="User avatar">
+                <img src="./images/reviewer2.jpg" alt="User avatar">
               </div>
               <div class="review-avatar">
-                <img src="/api/placeholder/35/35" alt="User avatar">
+                <img src="./images/reviewer3.jpg" alt="User avatar">
               </div>
             </div>
             <div class="review-stars">★★★★★</div>
             <span class="review-count">100+ reviews</span>
           </div>
-        </div>
+        </a>
         
         <div class="hero-image">
           <img src="./images/miswak.png" alt="Premium Miswak">
@@ -300,7 +313,7 @@
       </div>
       
       
-      <a class="action-buttons" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank">
+      <a class="action-buttons cta" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3" target="_blank">
         <button data-i18n="cta3" class="btn btn-primary">Quiero probar gratis por 14 dias</button>
       </a>
 
