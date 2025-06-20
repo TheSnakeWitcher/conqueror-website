@@ -134,7 +134,7 @@ const translations = {
 
         // problems
         "problems-title": "La salud de tus dientes es demasiado importante para descuidarla",
-        problem1: "Los cepillos tradicionales introducen microplasticos en tu cuerpo, con su uso prolongado acumulan bacterias o te lastiman las encias",
+        problem1: "Los cepillos de dientes introducen microplasticos en tu cuerpo, con su uso prolongado acumulan bacterias o te lastiman las encias",
         problem2: "La pasta presenta quimicos agresivos como SLS o plomo",
         problem3: "El hilo dental de plastico hace que acumules PFAS que son disruptores endocrinos",
         problem4: "Gastas en productos dentales que contaminan el medio ambiente",
@@ -198,7 +198,7 @@ const translations = {
 
         // problems
         "problems-title": "The health of your teeth is too important to be neglected",
-        problem1: "Traditional toothbrushes introduce microplastics into your body, with prolonged use they accumulate bacteria or hurt your gums",
+        problem1: "Toothbrushes introduce microplastics into your body, with prolonged use they accumulate bacteria or hurt your gums",
         problem2: "The paste contains aggressive chemicals such as SLS or lead",
         problem3: "Plastic dental floss causes you to accumulate PFAS which are endocrine disruptors",
         problem4: "You spend on dental products that pollute the environment",
