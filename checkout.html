@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Miswak Conqueror</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./checkout.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#483D8B',
+                        secondary: '#2d7a54',
+                        accent: '#4ade80',
+                        warm: '#f7f4f1'
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="./images/logo.ico" rel="icon">
+</head>
+<body class="bg-warm min-h-screen">
+    <!-- Header with Trust Signals -->
+    <header class="bg-white shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center">
+                <img style="width:3rem;height:3rem" class="logoimg" src="./images/logo.png" alt="Conqueror Logo"/>
+                <span class="text-xl font-bold text-primary">Conqueror Lifestyle</span>
+            </div>
+            <div class="flex items-center space-x-4 text-sm text-gray-600">
+                <div class="flex items-center space-x-1">
+                    <i class="fas fa-shield-alt text-green-500"></i>
+                    <span>Compra Segura</span>
+                </div>
+                <div class="flex items-center space-x-1">
+                    <i class="fas fa-truck text-green-500"></i>
+                    <span>Envío Gratis</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between mb-2">
+                <span class="text-sm font-medium text-primary">Finalizar Compra</span>
+                <span class="text-sm text-gray-500">Paso 1 de 2</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2">
+                <div class="bg-primary h-2 rounded-full" style="width: 50%"></div>
+            </div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Product Section -->
+            <div class="bg-white rounded-2xl shadow-xl p-8 h-fit">
+                <div class="text-center mb-6">
+                    <div class="mb-4 flex items-center justify-center">
+                        <img style="width:10rem;height:10rem" src="./images/miswak.png"/>
+                    <!-- <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-full mx-auto mb-4 flex items-center justify-center"> -->
+                    <!--     <i class="fas fa-seedling text-3xl text-white"></i> -->
+                    </div>
+                    <h1 class="text-2xl font-bold text-gray-800 mb-2">Caja de 3 Miswaks con envio gratis</h1>
+                    <p class="text-gray-600">3 Miswaks Naturales de Alta Calidad</p>
+                </div>
+
+                <!-- Product Description -->
+                <!-- <div class="mb-6 p-4 bg-green-50 rounded-lg border border-green-200"> -->
+                <!--     <h3 class="font-semibold text-primary mb-2">¿Qué incluye tu caja?</h3> -->
+                <!--     <ul class="text-sm text-gray-700 space-y-1"> -->
+                <!--         <li>• 3 Miswaks naturales frescos</li> -->
+                <!--         <li>• Guía de uso detallada</li> -->
+                <!--         <li>• Estuche protector biodegradable</li> -->
+                <!--         <li>• Garantía de satisfacción 30 días</li> -->
+                <!--     </ul> -->
+                <!-- </div> -->
+
+                <!-- Benefits -->
+                <div class="mb-6">
+                    <h3 class="font-semibold text-gray-800 mb-3">Beneficios:</h3>
+                    <div class="grid grid-cols-2 gap-3 text-sm">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Limpieza superior</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Encías más fuertes</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Dientes más blancos</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Aliento fresco</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>100% Natural y Eco-friendly</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-check-circle text-green-500"></i>
+                            <span>Libre de microplasticos y quimicos agresivos</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial -->
+                <!-- <div class="bg-gray-50 rounded-lg p-4 mb-6"> -->
+                <!--     <div class="flex items-center mb-2"> -->
+                <!--         <div class="flex text-yellow-400"> -->
+                <!--             <i class="fas fa-star"></i> -->
+                <!--             <i class="fas fa-star"></i> -->
+                <!--             <i class="fas fa-star"></i> -->
+                <!--             <i class="fas fa-star"></i> -->
+                <!--             <i class="fas fa-star"></i> -->
+                <!--         </div> -->
+                <!--         <span class="ml-2 text-sm text-gray-600">María C.</span> -->
+                <!--     </div> -->
+                <!--     <p class="text-sm text-gray-700 italic">"Mis encías están más saludables y mi dentista notó la mejora en mi última revisión."</p> -->
+                <!-- </div> -->
+
+            </div>
+
+            <!-- Checkout Form -->
+            <div class="bg-white rounded-2xl shadow-xl p-8">
+                <form id="checkoutForm">
+                    <!-- Payment Type Selection -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Tipo de Compra</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
+                                <input type="radio" name="paymentType" value="subscription" class="w-5 h-5 text-primary" checked>
+                                <div class="ml-3 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="font-medium text-gray-800">Suscripción Mensual</span>
+                                            <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full inline-block ml-2">
+                                                <i class="fas fa-gift mr-1"></i>MISWAK GRATIS
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-primary">$500<span class="text-sm font-normal">/mes</span></span>
+                                    </div>
+
+                                    <p class="text-sm text-gray-600">
+                                        Para los comprometidos con un estilo de vida saludable y el medio ambiente.
+                                        <!-- Incluye un periodo de prueba y un primer miswak gratis directo a tu puerta. -->
+                                        <!-- Entregas mensuales, pausa o cancela en cualquier momento -->
+                                    </p>
+
+                                    <ul class="text-sm space-y-1">
+                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Un miswak individual gratis de prueba directo a tu puerta</li>
+                                        <!-- <li class="flex items-center"><i class="fas fa-percentage text-green-500 mr-2"></i>10% de descuento por cada caja adicional</li> -->
+                                        <li class="flex items-center"><i class="fas fa-calendar text-green-500 mr-2"></i>Entregas automáticas cada mes</li>
+                                        <li class="flex items-center"><i class="fas fa-times-circle text-green-500 mr-2"></i>Pausa o cancela cuando quieras</li>
+                                    </ul>
+
+                                </div>
+                            </label>
+
+                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="onetime">
+                                <input type="radio" name="paymentType" value="onetime" class="w-5 h-5 text-primary" >
+                                <div class="ml-3 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <span class="font-medium text-gray-800">Compra Única</span>
+                                        <span class="text-2xl font-bold text-primary">$500</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Pago único, sin compromisos</p>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Subscription Benefits (Hidden by default) -->
+                    <!-- <div id="subscriptionBenefits" class="mb-6 p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-lg border border-green-200 hidden"> -->
+                    <!--     <h4 class="font-semibold text-primary mb-2">Beneficios de la Suscripción:</h4> -->
+                    <!--     <ul class="text-sm space-y-1"> -->
+                    <!--         <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Miswak individual gratis al suscribirte</li> -->
+                    <!--         <li class="flex items-center"><i class="fas fa-percentage text-green-500 mr-2"></i>20% de descuento permanente</li> -->
+                    <!--         <li class="flex items-center"><i class="fas fa-truck text-green-500 mr-2"></i>Envío gratis en todas las entregas</li> -->
+                    <!--         <li class="flex items-center"><i class="fas fa-calendar text-green-500 mr-2"></i>Entregas automáticas cada mes</li> -->
+                    <!--         <li class="flex items-center"><i class="fas fa-times-circle text-green-500 mr-2"></i>Cancela cuando quieras</li> -->
+                    <!--     </ul> -->
+                    <!-- </div> -->
+
+                    <!-- Quantity Selection -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Cantidad de Cajas</h3>
+                        <div class="flex items-center space-x-4">
+                            <button type="button" id="decreaseQty" class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <div class="text-center">
+                                <span id="quantity" class="text-2xl font-bold text-primary">1</span>
+                                <p class="text-sm text-gray-600">caja(s)</p>
+                            </div>
+                            <button type="button" id="increaseQty" class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+
+                        <!-- <i class="fa-solid fa-circle-info"></i> -->
+                        <p class="text-sm text-gray-600 mt-2 text-center">Cada caja incluye 3 Miswaks, recomendamos 1 caja mensual por persona</p>
+                    </div>
+
+                    <!-- Payment Method -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Método de Pago</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 hover:border-primary transition-all">
+                                <input type="radio" name="paymentMethod" value="card" class="w-5 h-5 text-primary" checked>
+                                <div class="ml-3 flex items-center">
+                                    <i class="fas fa-credit-card text-xl text-gray-600 mr-3"></i>
+                                    <span class="font-medium">Tarjeta de Débito/Crédito</span>
+                                </div>
+                                <div class="ml-auto flex space-x-2">
+                                    <i class="fab fa-cc-visa text-2xl text-blue-600"></i>
+                                    <i class="fab fa-cc-mastercard text-2xl text-red-500"></i>
+                                </div>
+                            </label>
+                            
+                            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 hover:border-primary transition-all">
+                                <input type="radio" name="paymentMethod" value="mercadopago" class="w-5 h-5 text-primary">
+                                <div class="ml-3 flex items-center">
+                                    <!-- <div class="w-8 h-8 bg-blue-500 rounded mr-3 flex items-center justify-center"> -->
+                                    <!--     <span class="text-white font-bold text-sm">🤝</span> -->
+                                    <!-- </div> -->
+
+                                    <span class="payment-icon"> <img width="32" height="32" src="./images/mercadopago-removebg-preview.png"> </span>
+                                    <span class="font-medium">MercadoPago</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="bg-gray-50 rounded-lg p-4 mb-6">
+                        <h4 class="font-semibold text-gray-800 mb-3">Resumen del Pedido</h4>
+                        <div class="space-y-2 text-sm">
+                            <div class="flex justify-between">
+                                <span>Caja Miswak × <span id="summaryQty">1</span></span>
+                                <span id="subtotal">$500</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Envío</span>
+                                <span class="text-green-600 font-medium">GRATIS</span>
+                            </div>
+                            <div id="discountRow" class="flex justify-between text-green-600 hidden">
+                                <span>Descuento suscripción</span>
+                                <span id="discount">-$6.00</span>
+                            </div>
+                            <hr class="my-2">
+                            <div class="flex justify-between text-lg font-bold">
+                                <span>Total</span>
+                                <span id="total" class="text-primary">$500</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="flex justify-center space-x-6 mb-6 text-sm text-gray-600">
+                        <div class="flex items-center">
+                            <i class="fas fa-lock text-green-500 mr-1"></i>
+                            <span>SSL Seguro</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-undo text-green-500 mr-1"></i>
+                            <span>30 días garantía</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-leaf text-green-500 mr-1"></i>
+                            <span>100% Natural</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white font-bold py-4 px-6 rounded-lg hover:from-secondary hover:to-primary transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        <i class="fas fa-shield-alt mr-2"></i>
+                        Completar Compra
+                    </button>
+
+                    <p class="text-xs text-gray-500 text-center mt-3">
+                        Al completar tu compra, aceptas nuestros términos y condiciones. 
+                        <br>Proceso 100% seguro y encriptado.
+                    </p>
+                </form>
+            </div>
+        </div>
+
+        <!-- Additional Trust Section -->
+        <!-- <div class="mt-12 bg-white rounded-2xl shadow-lg p-8"> -->
+        <!--     <div class="text-center mb-6"> -->
+        <!--         <h2 class="text-2xl font-bold text-gray-800 mb-2">¿Por qué elegir Conqueror Miswak?</h2> -->
+        <!--         <p class="text-gray-600">Más de 1000 clientes satisfechos confían en nosotros</p> -->
+        <!--     </div> -->
+        <!---->
+        <!--     <div class="grid md:grid-cols-3 gap-6"> -->
+        <!--         <div class="text-center"> -->
+        <!--             <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center"> -->
+        <!--                 <i class="fas fa-award text-2xl text-primary"></i> -->
+        <!--             </div> -->
+        <!--             <h3 class="font-semibold text-gray-800 mb-2">Calidad Premium</h3> -->
+        <!--             <p class="text-sm text-gray-600">Miswaks seleccionados de los mejores árboles Salvadora Persica</p> -->
+        <!--         </div> -->
+        <!---->
+        <!--         <div class="text-center"> -->
+        <!--             <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center"> -->
+        <!--                 <i class="fas fa-shipping-fast text-2xl text-primary"></i> -->
+        <!--             </div> -->
+        <!--             <h3 class="font-semibold text-gray-800 mb-2">Envío Rápido</h3> -->
+        <!--             <p class="text-sm text-gray-600">Recibe tu pedido en 2-4 días hábiles sin costo adicional</p> -->
+        <!--         </div> -->
+        <!---->
+        <!--         <div class="text-center"> -->
+        <!--             <div class="w-16 h-16 bg-green-100 rounded-full mx-auto mb-4 flex items-center justify-center"> -->
+        <!--                 <i class="fas fa-heart text-2xl text-primary"></i> -->
+        <!--             </div> -->
+        <!--             <h3 class="font-semibold text-gray-800 mb-2">Satisfacción Garantizada</h3> -->
+        <!--             <p class="text-sm text-gray-600">30 días de garantía o te devolvemos tu dinero</p> -->
+        <!--         </div> -->
+        <!--     </div> -->
+        <!-- </div> -->
+
+    </div>
+</body>
+</html>
