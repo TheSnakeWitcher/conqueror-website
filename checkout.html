@@ -214,7 +214,19 @@
                         <h3 class="text-lg font-semibold text-gray-800 mb-4">Método de Pago</h3>
                         <div class="space-y-3">
                             <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 hover:border-primary transition-all">
-                                <input type="radio" name="paymentMethod" value="card" class="w-5 h-5 text-primary" checked>
+                                <input type="radio" name="paymentMethod" value="mercadopago" class="w-5 h-5 text-primary" checked>
+                                <div class="ml-3 flex items-center">
+                                    <!-- <div class="w-8 h-8 bg-blue-500 rounded mr-3 flex items-center justify-center"> -->
+                                    <!--     <span class="text-white font-bold text-sm">🤝</span> -->
+                                    <!-- </div> -->
+
+                                    <span class="payment-icon"> <img width="32" height="32" src="./images/mercadopago-removebg-preview.png"> </span>
+                                    <span class="font-medium">MercadoPago</span>
+                                </div>
+                            </label>
+
+                            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 hover:border-primary transition-all">
+                                <input type="radio" name="paymentMethod" value="card" class="w-5 h-5 text-primary">
                                 <div class="ml-3 flex items-center">
                                     <i class="fas fa-credit-card text-xl text-gray-600 mr-3"></i>
                                     <span class="font-medium">Tarjeta de Débito/Crédito</span>
@@ -225,17 +237,6 @@
                                 </div>
                             </label>
                             
-                            <label class="flex items-center p-3 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 hover:border-primary transition-all">
-                                <input type="radio" name="paymentMethod" value="mercadopago" class="w-5 h-5 text-primary">
-                                <div class="ml-3 flex items-center">
-                                    <!-- <div class="w-8 h-8 bg-blue-500 rounded mr-3 flex items-center justify-center"> -->
-                                    <!--     <span class="text-white font-bold text-sm">🤝</span> -->
-                                    <!-- </div> -->
-
-                                    <span class="payment-icon"> <img width="32" height="32" src="./images/mercadopago-removebg-preview.png"> </span>
-                                    <span class="font-medium">MercadoPago</span>
-                                </div>
-                            </label>
                         </div>
                     </div>
 
