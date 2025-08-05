@@ -1,9 +1,9 @@
 let quantity = 1;
-let paymentType = 'onetime';
+let paymentType = 'subscription';
+
 const prices = { onetime: 500, subscription: 500 };
 const paymentsType = { subscription: "subscription", onetime: "onetime" }
 const paymentsMethods = { mercadoPago: "mercadopago", card: "card", paypal: "paypal" }
-
 const payments = {
     [paymentsType.subscription]: {
         [paymentsMethods.mercadoPago]: [
@@ -43,22 +43,19 @@ function updateDisplay() {
     document.getElementById('summaryQty').textContent = quantity;
     document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
     document.getElementById('total').textContent = `$${total.toFixed(2)}`;
+    document.getElementById('discount').textContent = `-$${discount.toFixed(2)}`;
 
-    const discountRow = document.getElementById('discountRow');
-    if (paymentType === 'subscription') {
-        document.getElementById('discount').textContent = `-$${discount.toFixed(2)}`;
-        discountRow.classList.remove('hidden');
-    } else {
-        discountRow.classList.add('hidden');
-    }
+    // const discountRow = document.getElementById('discountRow');
+    // if (paymentType === 'subscription') {
+    //     document.getElementById('discount').textContent = `-$${discount.toFixed(2)}`;
+    //     discountRow.classList.remove('hidden');
+    // } else {
+    //     discountRow.classList.add('hidden');
+    // }
 
     // Update button states
     document.getElementById('decreaseQty').disabled = quantity <= 1;
     document.getElementById('increaseQty').disabled = quantity >= 3;
-}
-
-function pay(method, qty) {
-    window.open(payments[method][qty])
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -85,12 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
             updateDisplay();
             
             // Show/hide subscription benefits
-            const benefitsDiv = document.getElementById('subscriptionBenefits');
-            if (paymentType === 'subscription') {
-                benefitsDiv.classList.remove('hidden');
-            } else {
-                benefitsDiv.classList.add('hidden');
-            }
+            // const benefitsDiv = document.getElementById('subscriptionBenefits');
+            // if (paymentType === 'subscription') {
+            //     benefitsDiv.classList.remove('hidden');
+            // } else {
+            //     benefitsDiv.classList.add('hidden');
+            // }
 
             // Update payment option styling
             document.querySelectorAll('.payment-option').forEach(option => {
