@@ -32,7 +32,7 @@
         fbq('init', '666759912447103');
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('checkoutForm').addEventListener('submit', (e) => {
-                fbq('track', 'AddPaymentInfo');
+                fbq('track', 'AddPaymentInfo', {test_event_code: 'TEST14583'});
             })
         })
     </script>
