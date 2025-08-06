@@ -41,9 +41,9 @@ function updateDisplay() {
 
     document.getElementById('quantity').textContent = quantity;
     document.getElementById('summaryQty').textContent = quantity;
-    document.getElementById('subtotal').textContent = `$${subtotal.toFixed(2)}`;
-    document.getElementById('total').textContent = `$${total.toFixed(2)}`;
-    document.getElementById('discount').textContent = `-$${discount.toFixed(2)}`;
+    document.getElementById('subtotal').textContent = `$${subtotal}`;
+    document.getElementById('total').textContent = `$${total}`;
+    document.getElementById('discount').textContent = `-$${discount}`;
 
     // const discountRow = document.getElementById('discountRow');
     // if (paymentType === 'subscription') {
