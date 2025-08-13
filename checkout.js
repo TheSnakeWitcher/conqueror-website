@@ -1,7 +1,7 @@
 let quantity = 1;
 let paymentType = 'subscription';
 
-const prices = { onetime: 500, subscription: 500 };
+const prices = { onetime: 580, subscription: 500 };
 const paymentsType = { subscription: "subscription", onetime: "onetime" }
 const paymentsMethods = { mercadoPago: "mercadopago", card: "card", paypal: "paypal" }
 const payments = {
@@ -35,15 +35,17 @@ function updateDisplay() {
     const basePrice = prices[paymentType];
     const subtotal = basePrice * quantity;
     // const discount = paymentType === 'subscription' && quantity > 1 ? subtotal * 0.1 : 0;
-    const discount = paymentType === 'subscription' && quantity > 1 ? (quantity-1)*100 : 0;
-    const total = subtotal - discount;
+    // const discount = paymentType === 'subscription' && quantity > 1 ? (quantity-1)*100 : 0;
+    const discount = paymentType === 'subscription' ? 14 : 0;
+    // const total = subtotal - discount;
+    const total = subtotal ;
     console.log(quantity)
 
     document.getElementById('quantity').textContent = quantity;
     document.getElementById('summaryQty').textContent = quantity;
     document.getElementById('subtotal').textContent = `$${subtotal}`;
     document.getElementById('total').textContent = `$${total}`;
-    document.getElementById('discount').textContent = `-$${discount}`;
+    document.getElementById('discount').textContent = `-${discount}%`;
 
     // const discountRow = document.getElementById('discountRow');
     // if (paymentType === 'subscription') {
