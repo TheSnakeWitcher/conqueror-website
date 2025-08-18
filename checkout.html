@@ -83,6 +83,26 @@
                     </div>
                     <h1 class="text-2xl font-bold text-gray-800 mb-2">Caja de 3 Miswaks con envio gratis</h1>
                     <p class="text-gray-600">3 Miswaks Naturales de Alta Calidad</p>
+
+                    <!-- Quantity Selection -->
+                    <div class="mt-6">
+                        <!-- <h3 class="text-lg font-semibold text-gray-800 mb-4">Cantidad de Cajas</h3> -->
+                        <div class="flex justify-center items-center space-x-4">
+                            <button type="button" id="decreaseQty" class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <div class="text-center">
+                                <span id="quantity" class="text-2xl font-bold text-primary">1</span>
+                                <p class="text-sm text-gray-600">caja(s)</p>
+                            </div>
+                            <button type="button" id="increaseQty" class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                        <!-- <i class="fa-solid fa-circle-info"></i> -->
+                        <p class="text-sm text-gray-600 mt-2 text-center">Recomendamos 1 caja mensual por persona</p>
+                    </div>
+
                 </div>
 
                 <!-- Product Description -->
@@ -97,35 +117,35 @@
                 <!-- </div> -->
 
                 <!-- Benefits -->
-                <div class="mb-6">
-                    <h3 class="font-semibold text-gray-800 mb-3">Beneficios:</h3>
-                    <div class="grid grid-cols-2 gap-3 text-sm">
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>Limpieza superior</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>Encías más fuertes</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>Dientes más blancos</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>Aliento fresco</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>100% Natural y Eco-friendly</span>
-                        </div>
-                        <div class="flex items-center space-x-2">
-                            <i class="fas fa-check-circle text-green-500"></i>
-                            <span>Libre de microplasticos y quimicos agresivos</span>
-                        </div>
-                    </div>
-                </div>
+                <!-- <div class="mb-6"> -->
+                <!--     <h3 class="font-semibold text-gray-800 mb-3">Beneficios:</h3> -->
+                <!--     <div class="grid grid-cols-2 gap-3 text-sm"> -->
+                <!--         <div class="flex items-center space-x-2"> -->
+                <!--             <i class="fas fa-check-circle text-green-500"></i> -->
+                <!--             <span>Limpieza superior</span> -->
+                <!--         </div> -->
+                <!--         <div class="flex items-center space-x-2"> -->
+                <!--             <i class="fas fa-check-circle text-green-500"></i> -->
+                <!--             <span>Encías más fuertes</span> -->
+                <!--         </div> -->
+                <!--         <div class="flex items-center space-x-2"> -->
+                <!--             <i class="fas fa-check-circle text-green-500"></i> -->
+                <!--             <span>Dientes más blancos</span> -->
+                <!--         </div> -->
+                <!--         <div class="flex items-center space-x-2"> -->
+                <!--             <i class="fas fa-check-circle text-green-500"></i> -->
+                <!--             <span>Aliento fresco</span> -->
+                <!--         </div> -->
+                <!--         <div class="flex items-center space-x-2"> -->
+                <!--             <i class="fas fa-check-circle text-green-500"></i> -->
+                <!--             <span>100% Natural y Eco-friendly</span> -->
+                <!--         </div> -->
+                <!--         <div class="flex items-center space-x-2"> -->
+                <!--             <i class="fas fa-check-circle text-green-500"></i> -->
+                <!--             <span>Libre de microplasticos y quimicos agresivos</span> -->
+                <!--         </div> -->
+                <!--     </div> -->
+                <!-- </div> -->
 
                 <!-- Testimonial -->
                 <!-- <div class="bg-gray-50 rounded-lg p-4 mb-6"> -->
@@ -205,26 +225,6 @@
                     <!--         <li class="flex items-center"><i class="fas fa-times-circle text-green-500 mr-2"></i>Cancela cuando quieras</li> -->
                     <!--     </ul> -->
                     <!-- </div> -->
-
-                    <!-- Quantity Selection -->
-                    <div class="mb-6">
-                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Cantidad de Cajas</h3>
-                        <div class="flex items-center space-x-4">
-                            <button type="button" id="decreaseQty" class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fas fa-minus"></i>
-                            </button>
-                            <div class="text-center">
-                                <span id="quantity" class="text-2xl font-bold text-primary">1</span>
-                                <p class="text-sm text-gray-600">caja(s)</p>
-                            </div>
-                            <button type="button" id="increaseQty" class="w-10 h-10 rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all">
-                                <i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-
-                        <!-- <i class="fa-solid fa-circle-info"></i> -->
-                        <p class="text-sm text-gray-600 mt-2 text-center">Cada caja incluye 3 Miswaks, recomendamos 1 caja mensual por persona</p>
-                    </div>
 
                     <!-- Payment Method -->
                     <div class="mb-6">
