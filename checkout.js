@@ -1,15 +1,27 @@
 let quantity = 1;
-let paymentType = 'subscription';
+let paymentType = 'test';
 
-const prices = { onetime: 580, subscription: 500 };
-const paymentsType = { subscription: "subscription", onetime: "onetime" }
+const prices = { test: 0, onetime: 580, subscription: 500 };
+const paymentsType = { subscription: "subscription", onetime: "onetime", test: "test" }
 const paymentsMethods = { mercadoPago: "mercadopago", card: "card", paypal: "paypal" }
 const payments = {
-    [paymentsType.subscription]: {
+    [paymentsType.test]: {
         [paymentsMethods.mercadoPago]: [
             "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3",
             "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=3372cc1112674583b813000fc5243f45",
             "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=ff2c572ee5c34b6cae837552c46a7366",
+        ],
+        [paymentsMethods.card]: [
+            "",
+            "",
+            "",
+        ],
+    },
+    [paymentsType.subscription]: {
+        [paymentsMethods.mercadoPago]: [
+            "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=e9404b71a47a49558d9963864a20b5fb",
+            "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=0e85871490874160bc1da6afce5f5d04",
+            "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=4b80971be9b842f4a6f96ced59f11815",
         ],
         [paymentsMethods.card]: [
             "",
@@ -33,6 +45,7 @@ const payments = {
 
 function updateDisplay() {
     const basePrice = prices[paymentType];
+    console.log(basePrice)
     const subtotal = basePrice * quantity;
     // const discount = paymentType === 'subscription' && quantity > 1 ? subtotal * 0.1 : 0;
     // const discount = paymentType === 'subscription' && quantity > 1 ? (quantity-1)*100 : 0;

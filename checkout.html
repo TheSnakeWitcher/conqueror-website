@@ -172,29 +172,44 @@
                         <h3 class="text-lg font-semibold text-gray-800 mb-4">Tipo de Compra</h3>
                         <div class="space-y-3">
                             <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
-                                <input type="radio" name="paymentType" value="subscription" class="w-5 h-5 text-primary" checked>
+                                <input type="radio" name="paymentType" value="test" class="w-5 h-5 text-primary" checked>
                                 <div class="ml-3 flex-1">
                                     <div class="flex items-center justify-between">
                                         <div>
-                                            <span class="font-medium text-gray-800">Suscripción Mensual</span>
+                                            <span class="font-medium text-gray-800">Prueba Gratuita</span>
                                             <div class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full inline-block ml-2">
                                                 <i class="fas fa-gift mr-1"></i>MISWAK GRATIS
                                             </div>
                                         </div>
+                                        <span class="text-2xl font-bold text-primary">$0</span>
+                                    </div>
+
+                                    <p class="text-sm text-gray-600">Para los que descubren los beneficios del miswak</p>
+
+                                    <ul class="text-sm space-y-1 mt-2">
+                                        <li class="flex items-center"><i class="fas fa-vial text-green-500 mr-2"></i>Periodo de prueba gratis</li>
+                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Recibe un miswak individual gratis directo a tu puerta</li>
+                                        <li class="flex items-center"><i class="fas fa-rocket text-green-500 mr-2"></i>Todos los beneficios de la subscripcion</li>
+                                    </ul>
+
+                                </div>
+                            </label>
+
+                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
+                                <input type="radio" name="paymentType" value="subscription" class="w-5 h-5 text-primary">
+                                <div class="ml-3 flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div>
+                                            <span class="font-medium text-gray-800">Suscripción Mensual</span>
+                                        </div>
                                         <span class="text-2xl font-bold text-primary">$500<span class="text-sm font-normal">/mes</span></span>
                                     </div>
 
-                                    <p class="text-sm text-gray-600">
-                                        Para los comprometidos con un estilo de vida saludable y el medio ambiente.
-                                        <!-- Incluye un periodo de prueba y un primer miswak gratis directo a tu puerta. -->
-                                        <!-- Entregas mensuales, pausa o cancela en cualquier momento -->
-                                    </p>
+                                    <p class="text-sm text-gray-600"> Para los comprometidos con un estilo de vida saludable y el medio ambiente</p>
 
-                                    <ul class="text-sm space-y-1">
-                                        <li class="flex items-center"><i class="fas fa-vial text-green-500 mr-2"></i>Periodo de prueba antes del primer pago</li>
-                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Un miswak individual gratis directo a tu puerta</li>
-                                        <li class="flex items-center"><i class="fas fa-percentage text-green-500 mr-2"></i>Ahora un 14% con descuentos</li>
-                                        <li class="flex items-center"><i class="fas fa-calendar text-green-500 mr-2"></i>Entregas automáticas cada mes</li>
+                                    <ul class="text-sm space-y-1 mt-2">
+                                            <li class="flex items-center"><i class="fas fa-percentage text-green-500 mr-2"></i>Ahorra un 14% en cada compra con descuentos especiales</li>
+                                        <li class="flex items-center"><i class="fas fa-calendar text-green-500 mr-2"></i>Entregas frescas y automáticas cada mes</li>
                                         <li class="flex items-center"><i class="fas fa-times-circle text-green-500 mr-2"></i>Pausa o cancela cuando quieras</li>
                                     </ul>
 
@@ -292,7 +307,7 @@
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span>Caja Miswak × <span id="summaryQty">1</span></span>
-                                <span id="subtotal">$500</span>
+                                <span id="subtotal">$0</span>
                             </div>
                             <div class="flex justify-between">
                                 <span>Envío</span>
@@ -300,12 +315,12 @@
                             </div>
                             <div id="discountRow" class="flex justify-between text-green-600">
                                 <span>Descuento suscripción</span>
-                                <span id="discount">-14%</span>
+                                <span id="discount">-0%</span>
                             </div>
                             <hr class="my-2">
                             <div class="flex justify-between text-lg font-bold">
                                 <span>Total</span>
-                                <span id="total" class="text-primary">$500</span>
+                                <span id="total" class="text-primary">$0</span>
                             </div>
                         </div>
                     </div>
