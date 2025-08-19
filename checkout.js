@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.log('Unknown payment method selected');
         }
         console.log(url)
-        window.open(url)
+        window.open(url,'payment',`popup=yes,width=${window.screen.width/2},height=${window.screen.height/2}`)
 
         // setTimeout(() => {
         //     alert(`¡Gracias por tu compra!\n\nResumen:\n- Tipo: ${formData.paymentType === 'subscription' ? 'Suscripción' : 'Compra única'}\n- Cantidad: ${formData.quantity} caja(s)\n- Total: ${formData.total}\n- Método: ${formData.paymentMethod === 'card' ? 'Tarjeta' : 'MercadoPago'}\n\nRecibirás un email de confirmación pronto.`);
