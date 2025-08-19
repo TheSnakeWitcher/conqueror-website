@@ -997,7 +997,7 @@ body {
 .language-selector {
     position: relative;
     display: inline-block;
-    min-width: 220px;
+    min-width: 160px;
 }
 
 .language-button {
