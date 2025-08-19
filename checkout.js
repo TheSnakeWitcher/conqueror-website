@@ -49,7 +49,7 @@ function updateDisplay() {
     const subtotal = basePrice * quantity;
     // const discount = paymentType === 'subscription' && quantity > 1 ? subtotal * 0.1 : 0;
     // const discount = paymentType === 'subscription' && quantity > 1 ? (quantity-1)*100 : 0;
-    const discount = paymentType === 'subscription' ? 14 : 0;
+    const discount = paymentType === 'subscription' ? 15 : 0;
     // const total = subtotal - discount;
     const total = subtotal ;
     console.log(quantity)
