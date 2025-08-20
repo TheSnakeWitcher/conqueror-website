@@ -171,7 +171,11 @@
                     <div class="mb-6">
                         <h3 class="text-lg font-semibold text-gray-800 mb-4">Tipo de Compra</h3>
                         <div class="space-y-3">
-                            <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
+
+                            <label class="relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
+                                <div class="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full z-10">
+                                    ¡Oferta por tiempo limitado!
+                                </div>
                                 <input type="radio" name="paymentType" value="test" class="w-5 h-5 text-primary" checked>
                                 <div class="ml-3 flex-1">
                                     <div class="flex items-center justify-between">
