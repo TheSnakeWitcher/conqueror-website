@@ -127,9 +127,10 @@ const translations = {
 
 
         // hero
-        title: "Dientes saludables libres de estres",
+        title: "Dientes saludables y limpios libres de estres",
         description: `Miswak, un cepillo de dientes natural para los que cuidan su salud y el medio ambiente.
-            Vuelvete miembro y recibe tu primer miswak gratis ! Ademas una caja de 3 miswaks en tu buzon cada mes`,
+            Limpieza eficaz, libre de quimicos artificiales y totalmente ecologica.
+            Ofrecemos una prueba GRATIS de 14 dias para que recibas tu primer miswak GRATIS ! Subscribete para disfrutar los beneficios de miswaks frescos en tu buzon cada mes`,
         contact: "Contacto",
 
         // problems
