@@ -16,7 +16,17 @@
   <link rel="stylesheet" href="index.css">
   <script src="index.js"></script>
   <script async type='text/javascript' src='https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=Sss8zE'></script>
+  <!-- special offer -->
+  <script>
+    const previousOffer = localStorage.getItem('offer')
+    const offer = (new URLSearchParams(window.location.search)).get('offer')
 
+    if (offer && previousOffer == null && new Date(offer * 1000) > new Date() ) localStorage.setItem('offer', offer);
+    const savedOffer = localStorage.getItem('offer')
+
+    const removable = new Date(previousOffer * 1000) < new Date()
+    if (previousOffer != null && removable) localStorage.removeItem('offer')
+  </script>
   <!-- Meta Pixel Code -->
   <script>
       !function(f,b,e,v,n,t,s)
@@ -124,7 +134,7 @@
   <section class="pain-points-section">
     <div class="container">
       <div class="pain-points-content">
-        <h2 data-i18n="problems-title" class="section-title">La salud de tus dientes es demasiado importante para descuidarla.</h2>
+        <h2 data-i18n="problems-title" class="section-title">La salud y limpieza de tus dientes es demasiado importante para descuidarla</h2>
         
         <div class="problems-list">
           <div class="problem-item">

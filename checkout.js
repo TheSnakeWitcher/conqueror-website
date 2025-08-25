@@ -75,6 +75,14 @@ function updateDisplay() {
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    // show special offer if needed
+    const offer = localStorage.getItem('offer')
+    const offerExpired = new Date(offer * 1000) < new Date()
+    console.log('offer: ', offer)
+    console.log('offerExpired: ', offerExpired)
+    if (offer && !offerExpired) document.getElementById('special-offer').classList.toggle('hidden')
+    if (offer && offerExpired) localStorage.removeItem('offer')
+
     // Quantity controls
     document.getElementById('decreaseQty').addEventListener('click', () => {
         if (quantity > 1) {
