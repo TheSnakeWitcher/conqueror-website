@@ -172,11 +172,11 @@
                         <h3 class="text-lg font-semibold text-gray-800 mb-4">Tipo de Compra</h3>
                         <div class="space-y-3">
 
-                            <label class="relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
+                            <label id='special-offer' class="hidden relative flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
                                 <div class="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full z-10">
                                     ¡Oferta por tiempo limitado!
                                 </div>
-                                <input type="radio" name="paymentType" value="test" class="w-5 h-5 text-primary" checked>
+                                <input type="radio" name="paymentType" value="test" class="w-5 h-5 text-primary">
                                 <div class="ml-3 flex-1">
                                     <div class="flex items-center justify-between">
                                         <div>
@@ -200,7 +200,7 @@
                             </label>
 
                             <label class="flex items-center p-4 border-2 border-gray-200 rounded-lg cursor-pointer hover:bg-green-50 hover:border-green-300 transition-all payment-option" data-type="subscription">
-                                <input type="radio" name="paymentType" value="subscription" class="w-5 h-5 text-primary">
+                                <input type="radio" name="paymentType" value="subscription" class="w-5 h-5 text-primary" checked>
                                 <div class="ml-3 flex-1">
                                     <div class="flex items-center justify-between">
                                         <div>
@@ -230,6 +230,34 @@
                                     <p class="text-sm text-gray-600">Pago único, sin compromisos</p>
                                 </div>
                             </label>
+                        </div>
+                    </div>
+
+                    <!-- Separador -->
+                    <div class="flex items-center my-2">
+                        <hr class="flex-1 border-gray-200">
+                        <span class="px-3 text-sm text-gray-500">o también</span>
+                        <hr class="flex-1 border-gray-200">
+                    </div>
+
+                    <div class="relative mb-2">
+                        <div class="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full z-10">
+                            ¡NUEVA!
+                        </div>
+                        <div class="border-2 border-yellow-400 rounded-lg p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <img alt="Mercado Libre" class="ml-logo mr-2" width="32" height="32" src="https://cdn.brandfetch.io/idlij9Yj_W/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1677421846740"/>
+                                    <span class="font-semibold text-gray-800">¿Prefieres MercadoLibre?</span>
+                                </div>
+                            </div>
+                            <!-- <p class="text-sm text-gray-600 mb-3">Compra con la seguridad y confianza de siempre</p> -->
+                            <a href="https://articulo.mercadolibre.com.uy/MLU-696880020-miswak-sewak-cepillo-de-dientes-natural-higiene-bucal-_JM" class="ml-shine inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all w-full justify-center">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1z"/>
+                                </svg>
+                                Ir a MercadoLibre
+                            </a>
                         </div>
                     </div>
 
@@ -275,34 +303,6 @@
                             
                         </div>
 
-                        <!-- Separador -->
-                        <div class="flex items-center my-4">
-                            <hr class="flex-1 border-gray-200">
-                            <span class="px-3 text-sm text-gray-500">o también</span>
-                            <hr class="flex-1 border-gray-200">
-                        </div>
-
-                        <div class="relative">
-                            <div class="absolute -top-2 -right-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full z-10">
-                                ¡NUEVA!
-                            </div>
-                            <div class="border-2 border-yellow-400 rounded-lg p-4 bg-gradient-to-r from-yellow-50 to-yellow-100">
-                                <div class="flex items-center justify-between mb-2">
-                                    <div class="flex items-center">
-                                        <img alt="Mercado Libre" class="ml-logo mr-2" width="32" height="32" src="https://cdn.brandfetch.io/idlij9Yj_W/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1677421846740"/>
-                                        <span class="font-semibold text-gray-800">¿Prefieres MercadoLibre?</span>
-                                    </div>
-                                </div>
-                                <!-- <p class="text-sm text-gray-600 mb-3">Compra con la seguridad y confianza de siempre</p> -->
-                                <a href="https://articulo.mercadolibre.com.uy/MLU-696880020-miswak-sewak-cepillo-de-dientes-natural-higiene-bucal-_JM" class="ml-shine inline-flex items-center bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all w-full justify-center">
-                                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M19 7h-3V6a4 4 0 0 0-8 0v1H5a1 1 0 0 0-1 1v11a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V8a1 1 0 0 0-1-1z"/>
-                                    </svg>
-                                    Ir a MercadoLibre
-                                </a>
-                            </div>
-                        </div>
-
                     </div>
 
                     <!-- Order Summary -->
@@ -311,7 +311,7 @@
                         <div class="space-y-2 text-sm">
                             <div class="flex justify-between">
                                 <span>Caja Miswak × <span id="summaryQty">1</span></span>
-                                <span id="subtotal">$0</span>
+                                <span id="subtotal">$500</span>
                             </div>
                             <div class="flex justify-between">
                                 <span>Envío</span>
@@ -319,12 +319,12 @@
                             </div>
                             <div id="discountRow" class="flex justify-between text-green-600">
                                 <span>Descuento suscripción</span>
-                                <span id="discount">-0%</span>
+                                <span id="discount">-15%</span>
                             </div>
                             <hr class="my-2">
                             <div class="flex justify-between text-lg font-bold">
                                 <span>Total</span>
-                                <span id="total" class="text-primary">$0</span>
+                                <span id="total" class="text-primary">$500</span>
                             </div>
                         </div>
                     </div>
