@@ -121,9 +121,9 @@ function updateLanguage(lang) {
 const translations = {
     es: {
         // ctas
-        cta1: "Quiero mi miswak gratis",
-        cta2: "Quiero probar gratis por 14 dias",
-        cta3: "Quiero probar gratis por 14 dias",
+        cta1: "Quiero mi miswak",
+        cta2: "Quiero mi miswak",
+        cta3: "Quiero mi miswak",
 
 
         // hero
