@@ -1,5 +1,5 @@
 let quantity = 1;
-let paymentType = 'test';
+let paymentType = 'subscription';
 
 const prices = { test: 0, onetime: 600, subscription: 500 };
 const paymentsType = { subscription: "subscription", onetime: "onetime", test: "test" }
