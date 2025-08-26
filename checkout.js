@@ -7,10 +7,15 @@ const paymentsMethods = { mercadoPago: "mercadopago", card: "card", paypal: "pay
 const payments = {
     [paymentsType.test]: {
         [paymentsMethods.mercadoPago]: [
-            "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3",
-            "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=3372cc1112674583b813000fc5243f45",
-            "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=ff2c572ee5c34b6cae837552c46a7366",
+            "https://wa.me/59891601167?text=hola, me interesa la prueba gratuita",
+            "https://wa.me/59891601167?text=hola, me interesa la prueba gratuita",
+            "https://wa.me/59891601167?text=hola, me interesa la prueba gratuita"
         ],
+        // [paymentsMethods.mercadoPago]: [
+        //     "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=2c93808496d9dcdf0196f261f1bc0ae3",
+        //     "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=3372cc1112674583b813000fc5243f45",
+        //     "https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=ff2c572ee5c34b6cae837552c46a7366",
+        // ],
         [paymentsMethods.card]: [
             "",
             "",
