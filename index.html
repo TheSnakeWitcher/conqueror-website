@@ -20,6 +20,7 @@
   <script>
     const previousOffer = localStorage.getItem('offer')
     const offer = (new URLSearchParams(window.location.search)).get('offer')
+    console.log(offer)
 
     if (offer && previousOffer == null && new Date(offer * 1000) > new Date() ) localStorage.setItem('offer', offer);
     const savedOffer = localStorage.getItem('offer')
