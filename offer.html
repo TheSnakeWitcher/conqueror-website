@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conqueror Lifestyle — Prueba gratis 14 días</title>
+  <meta name="description" content="Prueba gratis 14 días + miswak gratis y envío incluido. Cancelá sin pagar. Luego suscripción $1500 cada 3 meses (equiv. $500/mes)." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="./images/logo.ico" rel="icon">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --bg:#0f172a;
+      --card:#fff;
+      --accent:#7c3aed;
+      --accent-2:#06b6d4;
+      --muted:#6b7280;
+      --gold:#f5c66b;
+      --radius:16px;
+      --maxw:900px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; margin:0;background:linear-gradient(180deg,#f8fafc 0%, #ffffff 40%); color:#0b1220}
+
+    .wrap{max-width:var(--maxw); margin:38px auto; padding:28px; background:var(--card); border-radius:20px; box-shadow:0 8px 30px rgba(2,6,23,0.08); position:relative; overflow:visible}
+    .brand{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+    .logo{width:54px;height:54px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:18px}
+    /* .logo{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:18px} */
+    .brand h1{margin:0;font-size:16px}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    .hero{display:grid;grid-template-columns: 1fr 360px;gap:10px;align-items:center;margin-top:10px}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+    }
+
+    /* .left{padding:4px 6px} */
+    .kicker{color:var(--muted);font-weight:600;font-size:13px;text-align:left}
+    .headline{font-size:34px;line-height:1.2;margin:8px 0 6px;font-weight:800;text-align:left}
+    .highlight{color:var(--accent)}
+    .sub{color:var(--muted);margin-bottom:18px;text-align:left}
+
+    /* .card{background:linear-gradient(180deg,#ffffff,#fbfdff);border-radius:14px;padding:18px;display:flex;flex-direction:column;align-items:center;gap:10px;box-shadow:0 6px 18px rgba(20,16,42,0.06)} */
+    /* .packet{width:180px;height:220px;border-radius:8px;background:linear-gradient(180deg,#e6f7ff,#f7fbff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#0b2b3a;position:relative} */
+    /* .packet img{max-width:86%;max-height:86%} */
+
+    .badge{position:absolute;left:50%;transform:translateX(-50%);bottom:54px;background:var(--gold);padding:16px 22px;border-radius:10px;font-weight:800;font-size:22px;color:#fff;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+    .badge small{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,0.9);opacity:0.95}
+
+    .form{background:transparent;padding:6px 0;width:100%}
+    .input-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .input-row input[type="email"]{flex:1;padding:14px 16px;border-radius:999px;border:1px solid #e6e9ef;font-size:15px;min-width:200px}
+    .cta{background:var(--accent);border:none;color:white;padding:14px 30px;border-radius:999px;font-weight:700;font-size:15px;cursor:pointer;min-width:200px}
+    .cta:active{transform:translateY(1px)}
+
+    .bullets{margin-top:16px;color:var(--muted);font-size:15px;text-align:left}
+    .bullets li{margin:8px 0}
+
+    .small{font-size:13px;color:var(--muted);margin-top:12px;text-align:left}
+
+    .footer{margin-top:20px;border-top:1px solid #f1f5f9;padding-top:16px;color:var(--muted);font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+
+    @media (max-width:560px){
+      .headline{font-size:26px;}
+      .badge{font-size:16px;padding:12px 16px}
+      .hero{gap:32px}
+      .input-row{flex-direction:column;align-items:stretch}
+      .cta{width:100%}
+    }
+
+    .topbar {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo {font-size: 1.5rem; font-weight: bold; color: #483D8B; }
+    /* .logoimg { height: 40px; margin-right: 10px; } */
+
+    @media (max-width: 768px) {
+      .topbar {
+        height: 3rem;
+        padding: 8px 0;
+        background-color: var(--color-white);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        position: relative;
+        top: 0;
+        z-index: 100;
+      }
+      .logo { font-size: 1.3rem; justify-content: center; }
+      .logoimg {height: 30px; }
+    }
+
+    .review-section {display: flex; align-items: center; margin-top: 30px; }
+    .review-stars { color: #ffb800; margin-right: 5px; }
+    .review-count { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="logo">
+       <img class="logoimg" src="./images/logo.png" alt="Conqueror Logo"> Conqueror
+     </div>
+  </div>
+
+  <main class="wrap" role="main">
+
+    <!-- <header class="brand"> -->
+    <!--   <img class="logo" src="./images/logo.png"/> -->
+    <!--   <div> -->
+    <!--       <h1>Conqueror Lifestyle</h1> -->
+    <!--       <p>Prueba gratis 14 días · Miswak gratis + envío gratis</p> -->
+    <!--   </div>  -->
+    <!-- </header> -->
+
+    <section class="hero" aria-labelledby="main-heading">
+
+      <div class="card">
+        <div style="position:relative;display:flex;justify-content:center;">
+          <div class="packet" role="img" aria-label="Miswak pack">
+            <img src="./images/miswak.jpg" alt="Paquete Miswak">
+            <!-- <img style="width:20rem;height:20rem;" src="./images/miswak.jpg" alt="Paquete Miswak"> -->
+          </div>
+          <!-- <div class="badge" style="left:50%;transform:translateX(-50%) translateY(50%);"> -->
+          <!--   CON PRUEBA -->
+          <!--   <small>14 DÍAS GRATIS</small> -->
+          <!-- </div> -->
+        </div>
+      </div>
+
+      <div class="left">
+        <!-- <div class="kicker">AQUÍ ESTÁ LO QUE PIDISTE</div> -->
+        <h2 id="main-heading" class="headline"><span class="highlight">Prueba gratis de 14 días</span> — incluye un miswak gratis con envio tambien gratis</h2>
+        <p class="sub"> Adoptá un nuevo hábito saludable para mantener tus dientes limpios y sanos</p>
+
+        <a class="cta" style="width:100%;" href="https://www.mercadopago.com.uy/subscriptions/checkout?preapproval_plan_id=4b80971be9b842f4a6f96ced59f11815">Quiero probar gratis</a>
+        <a class="review-section" href="https://g.page/r/CWMEivYUmfhfEBM/review" target="_blank">
+          <div class="review-stars">★★★★★</div>
+          <span class="review-count">reviews</span>
+          <!-- <span class="review-count">100+ reviews</span> -->
+          <!--   <a href="https://articulo.mercadolibre.com.uy/MLU-696880020-miswak-sewak-cepillo-de-dientes-natural-higiene-bucal-_JM" > -->
+          <!--     <img alt="Mercado Libre" class="ml-logo mr-2" width="32" height="32" src="https://cdn.brandfetch.io/idlij9Yj_W/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1677421846740"/> -->
+          <!--   </a> -->
+        </a>
+        <!-- <form class="form" id="signup-form"> -->
+        <!--   <div class="input-row"> -->
+        <!--     <input aria-label="Correo electrónico" id="email" type="email" placeholder="Tu mejor correo" required /> -->
+        <!--   </div> -->
+        <!-- </form> -->
+
+        <ul class="bullets">
+          <li><i style="color:var(--accent)" class="fa-solid fa-face-smile"></i> <strong>Sin riesgo</strong> 14 días de prueba sin cargos, si no estas satisfecho cancelá y no pagás nada</li>
+          <li><i style="color:var(--accent)" class="fa-solid fa-gift"></i> Recibí 1 miswak GRATIS de regalo para experimentar(incluye envío tambien gratis directo a tu puerta)</li>
+          <li><i style="color:var(--accent)" class="fa-solid fa-gift"></i> Recibí otro miswak de bono si te quedas</li>
+          <li><i style="color:var(--accent)" class="fa-solid fa-solid fa-headset"></i> Soporte las 24h </li>
+          <li><i style="color:var(--accent)" class="fa-solid fa-dumbbell"></i> Si te quedas, la suscripción de pack de 9 miswaks por <span class="price">$1500 cada 3 meses</span> (equivalente a $500/mes por pack de 3) con envio gratis.</li>
+        </ul>
+        <p class="highlight">Válida hasta el domingo 12, solo 50 disponibles </p>
+        <p class="small">Al registrarte aceptás los términos y que tu suscripción se renueve automáticamente después del período de prueba.</p>
+      </div>
+
+    </section>
+
+    <a class="fixed bottom-6 right-6 z-50 group cursor-pointer" href="https://wa.me/59891601167?text=hola" target="_blank">
+      <div class="relative w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-400/30 hover:shadow-xl hover:shadow-green-400/40 hover:scale-110 active:scale-95 transition-all duration-300"> 
+        <svg class="w-8 h-8 fill-white relative z-10" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.687"/>
+        </svg>
+      </div>
+      
+      <!-- Tooltip -->
+      <div class="absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white px-4 py-3 rounded-full text-sm font-medium whitespace-nowrap shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:-translate-x-2 transition-all duration-300 md:block hidden">
+        ¿Necesitas ayuda con tu compra?
+        <!-- Flecha del tooltip -->
+        <div class="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-l-8 border-l-gray-800 border-t-4 border-t-transparent border-b-4 border-b-transparent"></div>
+      </div>
+    </a>
+  </main>
+</body>
+</html>
