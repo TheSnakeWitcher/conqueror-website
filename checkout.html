@@ -32,11 +32,27 @@
         s.parentNode.insertBefore(t,s)}(window, document,'script',
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '666759912447103');
+        fbq('track', 'PageView');
         document.addEventListener("DOMContentLoaded", () => {
             document.getElementById('checkoutForm').addEventListener('submit', (e) => {
                 fbq('track', 'AddPaymentInfo');
             })
+            document.getElementById('wpp').addEventListener('submit', (e) => {
+                fbq('track', 'Contact');
+            })
         })
+    </script>
+    <!-- special offer -->
+    <script>
+        const previousOffer = localStorage.getItem('offer')
+        const offer = (new URLSearchParams(window.location.search)).get('offer')
+        console.log(offer)
+
+        if (offer && previousOffer == null && new Date(offer * 1000) > new Date() ) localStorage.setItem('offer', offer);
+        const savedOffer = localStorage.getItem('offer')
+
+        const removable = new Date(previousOffer * 1000) < new Date()
+        if (previousOffer != null && removable) localStorage.removeItem('offer')
     </script>
 </head>
 <body class="bg-warm min-h-screen">
@@ -191,8 +207,11 @@
                                     <p class="text-sm text-gray-600">Para los que descubren los beneficios del miswak</p>
 
                                     <ul class="text-sm space-y-1 mt-2">
-                                        <li class="flex items-center"><i class="fas fa-vial text-green-500 mr-2"></i>Periodo de prueba GRATIS de 14 dias , puedes cancelar sin pagar si no estas satisfecho</li>
-                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Recibe un miswak individual gratis directo a tu puerta</li>
+                                        <li class="flex items-center"><i class="fas fa-vial text-green-500 mr-2"></i>Periodo de prueba GRATIS de 14 dias, puedes cancelar sin pagar si no estas satisfecho</li>
+                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Recibe un miswak individual gratis de regalo con envio tambien gratis directo a tu puerta</li>
+                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Otro miswak de bono si te quedas</li>
+                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Derecho a participar en una proxima oferta especial exclusiva de 90% de descuento para compartir con amigos</li>
+                                        <li class="flex items-center"><i class="fas fa-gift text-green-500 mr-2"></i>Soporte las 24h</li>
                                         <li class="flex items-center"><i class="fas fa-rocket text-green-500 mr-2"></i>Todos los beneficios de la subscripcion</li>
                                     </ul>
 
@@ -212,9 +231,12 @@
                                     <p class="text-sm text-gray-600"> Para los comprometidos con un estilo de vida saludable y el medio ambiente</p>
 
                                     <ul class="text-sm space-y-1 mt-2">
-                                        <li class="flex items-center"><i class="fas fa-percentage text-green-500 mr-2"></i>Ahorra en cada compra con descuentos especiales</li>
-                                        <li class="flex items-center"><i class="fas fa-calendar text-green-500 mr-2"></i>Entregas frescas y automáticas cada mes</li>
+                                        <li class="flex items-center"><i class="fas fa-thumbs-up text-green-500 mr-2"></i>Garantia de disponibilidad</li>
                                         <li class="flex items-center"><i class="fas fa-times-circle text-green-500 mr-2"></i>Pausa o cancela cuando quieras</li>
+                                        <li class="flex items-center"><i class="fas fa-calendar text-green-500 mr-2"></i>Maxima comodidad y ahorro de tiempo con entregas mensuales</li>
+                                        <li class="flex items-center"><i class="fas fa-percentage text-green-500 mr-2"></i>Ahorra en cada compra con descuentos especiales</li>
+                                        <li class="flex items-center"><i class="fas fa-comment text-green-500 mr-2"></i>Atencion personalizada y asistencia exclusiva</li>
+                                        <li class="flex items-center"><i class="fas fa-face-smile text-green-500 mr-2"></i>Beneficios especiales extra misteriosos ;)</li>
                                     </ul>
 
                                 </div>
@@ -384,7 +406,7 @@
             </div>
         </div>
 
-        <a class="fixed bottom-6 right-6 z-50 group cursor-pointer" href="https://wa.me/59891601167?text=hola" target="_blank">
+        <a id="wpp" class="fixed bottom-6 right-6 z-50 group cursor-pointer" href="https://wa.me/59891601167?text=hola" target="_blank">
           <!-- Botón principal -->
           <!-- <div class="animate-pulse relative w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-400/30 hover:shadow-xl hover:shadow-green-400/40 hover:scale-110 active:scale-95 transition-all duration-300">  -->
           <div class="relative w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-lg shadow-green-400/30 hover:shadow-xl hover:shadow-green-400/40 hover:scale-110 active:scale-95 transition-all duration-300"> 
