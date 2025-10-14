@@ -1,7 +1,7 @@
 let quantity = 1;
 let paymentType = 'subscription';
 
-const prices = { test: 0, onetime: 600, subscription: 500 };
+const prices = { test: 0, onetime: 600, subscription: 600 };
 const paymentsType = { subscription: "subscription", onetime: "onetime", test: "test" }
 const paymentsMethods = { mercadoPago: "mercadopago", card: "card", paypal: "paypal" }
 const payments = {
