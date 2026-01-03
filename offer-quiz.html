@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Quiz: Rutina de Salud Bucal — Conqueror</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --card:#ffffff; --accent:#2b6cb0; --muted:#6b7280;
+    --good:#16a34a; --bad:#dc2626; --warn:#f59e0b;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+  }
+  .topbar {background-color: #fff;box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: center;}
+  .logoimg { height: 40px; margin-right: 10px; }
+  @media (max-width: 768px) {
+      .topbar { height: 3rem; padding: 8px 0; background-color: var(--color-white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; top: 0; z-index: 100;}
+      .logoimg {height: 30px; }
+  }
+  body{margin:0;background:linear-gradient(180deg,#eef4ff 0%,var(--bg) 100%);color:#0f172a;}
+  .container{max-width:920px;margin:36px auto;padding:20px;}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  header .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#1e40af);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+  h1{margin:0;font-size:1.4rem}
+  p.lead{margin:6px 0 18px;color:var(--muted)}
+  .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(12, 24, 50, 0.06)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:720px){.row{grid-template-columns:1fr}}
+  label{display:block;font-weight:600;margin-bottom:6px}
+  select,input[type="text"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff}
+  .option-row{display:flex;gap:10px;flex-wrap:wrap}
+  .option{padding:8px 10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;cursor:pointer}
+  .option input{margin-right:6px}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  button{border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-ghost{background:transparent;border:1px solid #d1d5db;color:var(--muted)}
+  .results{margin-top:18px}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700}
+  .score{font-size:2rem;font-weight:800}
+  ul{margin:0;padding-left:18px}
+  .issue{border-left:4px solid var(--bad);padding:12px;margin-bottom:10px;border-radius:8px;background:#fff7f7}
+  .good{border-left:4px solid var(--good);background:#f6fffa}
+  .warn{border-left:4px solid var(--warn);background:#fffaf0}
+  footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+  .small{font-size:0.9rem;color:var(--muted)}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // document.getElementById('quizForm').addEventListener('submit', function(e) {
+    document.getElementById('analizarBtn').addEventListener('click', function(e) {
+        console.log('called')
+        // e.preventDefault();
+
+        const toothbrush_material = document.querySelector('input[name="toothbrush-material"]:checked').value;
+        console.log(toothbrush_material)
+        const toothbrush_frecuency = document.querySelector('input[name="toothbrush-frequency"]:checked').value;
+        console.log(toothbrush_frecuency)
+        const toothbrush_desinfection = document.querySelector('input[name="toothbrush-desinfection"]:checked').value;
+        console.log(toothbrush_desinfection)
+        const toothpaste = document.querySelector('input[name="toothpaste"]:checked').value;
+        console.log(toothpaste)
+        const floss = document.querySelector('input[name="floss"]:checked').value;
+        console.log(floss)
+        const mouthwash = document.querySelector('input[name="mouthwash"]:checked').value;
+        console.log(mouthwash)
+
+        console.log('before redirect')
+        window.open(`./offer-quiz-answer.html?toothbrush-material=${toothbrush_material}&toothbrush-frequency=${toothbrush_frecuency}&toothbrush-desinfection=${toothbrush_desinfection}&toothpaste=${toothpaste}&floss=${floss}&mouthwash=${mouthwash}`)
+        console.log('after redirect')
+    })
+})
+</script>
+</head>
+<body>
+
+  <div class="topbar">
+    <div>
+       <img class="logoimg" src="../images/logo.png" alt="Conqueror Logo"> Conqueror
+     </div>
+  </div>
+
+  <div class="container">
+    <header>
+      <!-- <img class="logo" src="../images/logo.png"> -->
+      <div>
+        <h1>Quiz: Rutina de Salud Bucal</h1>
+        <p class="lead">
+            Responde estas preguntas rápidas para obtener un reporte con los errores más comunes en tu rutina de salud bucal y algunas recomendaciones prácticas.
+            Esta herramienta ofrece recomendaciones generales, para diagnóstico y tratamiento individual consulta a tu dentista
+        </p>
+      </div>
+    </header>
+
+    <div class="card" role="main">
+      <form id="quizForm" aria-labelledby="quiz-title">
+
+        <div style="margin-top:12px">
+          <label>¿Qué tipo de cepillo usas?</label>
+          <div class="option-row" role="radiogroup" aria-label="Tipo de cepillo">
+            <label class="option"><input type="radio" name="toothbrush-material" value="plastico"> Plástico </label>
+            <label class="option"><input type="radio" name="toothbrush-material" value="bamboo" required> Bamboo </label>
+            <label class="option"><input type="radio" name="toothbrush-material" value="electrico"> Eléctrico </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿Cada cuánto cambias el cepillo?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="toothbrush-frequency" value="w" required> Cada semana </label>
+            <label class="option"><input type="radio" name="toothbrush-frequency" value="m" required> Cada mes </label>
+            <label class="option"><input type="radio" name="toothbrush-frequency" value="m3" required> Cada 1-3 meses </label>
+            <label class="option"><input type="radio" name="toothbrush-frequency" value="m4" required> Mas de 3 meses </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿Qué haces cuando terminas de usar el cepillo?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="toothbrush-desinfection" value="enjuaga" required>Enjuago con agua</label>
+            <label class="option"><input type="radio" name="toothbrush-desinfection" value="agita"> Agitar y dejar secar al aire</label>
+            <label class="option"><input type="radio" name="toothbrush-desinfection" value="desinfecta">Uso algun desinfectante</label>
+            <label class="option"><input type="radio" name="toothbrush-desinfection" value="nada"> No lo limpio</label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿Usas pasta de dientes?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="toothpaste" value="true" required> Sí </label>
+            <label class="option"><input type="radio" name="toothpaste" value="false"> No </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿La pasta tiene fluor ?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="pasta" value="true" required> Sí </label>
+            <label class="option"><input type="radio" name="pasta" value="false"> No </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿La pasta es blanqueadora ?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="pasta-white" value="true" required> Sí </label>
+            <label class="option"><input type="radio" name="pasta-white" value="false"> No </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿Usas hilo dental?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="floss" value="true" required> Sí </label>
+            <label class="option"><input type="radio" name="floss" value="false"> No </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿De que material es el hilo dental ?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="floss-material" value="plastico" required> Plastico </label>
+            <label class="option"><input type="radio" name="floss-material" value="carbon" required> Carbon </label>
+            <label class="option"><input type="radio" name="floss-material" value="seda" required> Seda </label>
+            <label class="option"><input type="radio" name="floss-material" value="bamboo" required> Bamboo </label>
+            <label class="option"><input type="radio" name="floss-material" value="maiz" required> Almidon de maiz </label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿ La pasta o el hilo dental tiene saborizante como menta u otro ?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="flavor" value="true" required> Sí</label>
+            <label class="option"><input type="radio" name="flavor" value="false"> No</label>
+          </div>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>¿Usas enjuague bucal?</label>
+          <div class="option-row">
+            <label class="option"><input type="radio" name="mouthwash" value="true" required> Sí </label>
+            <label class="option"><input type="radio" name="mouthwash" value="false"> No </label>
+          </div>
+        </div>
+
+        <div class="controls" style="justify-content:center;">
+          <button type="button" class="btn-primary" id="analizarBtn">Analizar mi rutina</button>
+          <!-- <a href="./offer-quiz-answer.html"> -->
+            <!-- <button type="button" class="btn-primary" id="analizarBtn">Analizar mi rutina</button> -->
+          <!-- </a> -->
+          <!-- <button type="button" class="btn-ghost" id="imprimirBtn">Imprimir reporte</button> -->
+          <!-- <button type="reset" class="btn-ghost" id="limpiarBtn">Limpiar</button> -->
+        </div>
+      </form>
+
+      <div id="results" class="results" aria-live="polite"></div>
+    </div>
+  </div>
+</body>
+</html>
