@@ -118,6 +118,10 @@
         document.getElementById('mouthwash').textContent = mouthwashText
         document.getElementById('floss').textContent = flossText
 
+        document.getElementById('ctaBtn').addEventListener('click', () => {
+            window.open("https://wa.me/59891601167?text=hola,acabo de realizar el quiz y quiero saber mas" )
+        })
+
         document.getElementById('downloadBtn').addEventListener('click', () => {
           console.log('download started')
           const html = document.documentElement.outerHTML;
