@@ -45,7 +45,6 @@
   footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
   .small{font-size:0.9rem;color:var(--muted)}
 </style>
-<!-- special offer -->
 <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -88,26 +87,34 @@
 
 
     const toothpasteText = toothpaste == ok ? 
-        "Como usas pasta asegurate de buscar alguna con ingredientes naturales para evitar posibles problemas" :
-        "Como no usas pasta evitas todo lo anterior, como la exposicion a quimicos artificiales, solo verifica que el metodo que uses brinde limpieza suficiente"
+        "Como usas pasta asegurate de buscar alguna con ingredientes naturales para evitar posibles problemas. " :
+        "Como no usas pasta evitas todo lo anterior, como la exposicion a quimicos artificiales, solo verifica que el metodo que uses brinde limpieza suficiente. "
 
     const flossText = floss == ok ? 
-        "Para ti que usas esta muy bien, solo ten cuidado con el material para evitar efectos negativos" :
-        "Para ti que no usas te ahorras los problemas asociados con el uso insconsciente del mismo, pero tambien pierdes las posibles ganancias de usarlo correctamente"
+        "Al usar hilo dental esta muy bien, solo ten cuidado con el material para evitar efectos negativos. " :
+        "Al no usar hilo dental te ahorras los problemas asociados con el uso insconsciente del mismo, pero tambien pierdes las posibles ganancias de usarlo correctamente. "
 
     const mouthwashText = mouthwash == ok ?
-        "Para ti que usas busca sobre los quimicos que contiene para evitar problemas innecesarios" :
-        "Para ti que no usas te liberas de la exposicion a posibles quimicos artificiales"
+        "Como usas enjuague bucal busca sobre los quimicos que contiene para evitar problemas innecesarios. " :
+        "Como no usas enjuague bucal te liberas de la exposicion a posibles quimicos artificiales. "
+
+    const forYouText = toothbrushText + toothpasteText + flossText + mouthwashText
 
     document.addEventListener("DOMContentLoaded", () => {
-        document.getElementById('toothbrush').textContent = toothbrushText
-        document.getElementById('toothpaste').textContent = toothpasteText
-        document.getElementById('mouthwash').textContent = mouthwashText
-        document.getElementById('floss').textContent = flossText
+        // document.getElementById('toothbrush').textContent = toothbrushText
+        // document.getElementById('toothpaste').textContent = toothpasteText
+        // document.getElementById('mouthwash').textContent = mouthwashText
+        // document.getElementById('floss').textContent = flossText
+        document.getElementById('forYou').textContent = forYouText
 
         document.getElementById('ctaBtn').addEventListener('click', () => {
             fbq('track', 'Contact');
             window.open("https://wa.me/59891601167?text=hola,acabo de realizar el quiz y quiero saber mas" )
+        })
+
+        document.getElementById('mlBtn').addEventListener('click', () => {
+            fbq('track', 'Search');
+            window.open("https://articulo.mercadolibre.com.uy/MLU-696880020-miswak-sewak-cepillo-de-dientes-natural-higiene-bucal-_JM" )
         })
 
         document.getElementById('downloadBtn').addEventListener('click', () => {
@@ -130,6 +137,7 @@
     <div>
        <img class="logoimg" src="../images/logo.png" alt="Conqueror Logo"> Conqueror
      </div>
+
   </div>
 
   <div class="container">
@@ -156,7 +164,7 @@
               descargar con la tapa cerrada y/o alejar el cepillo del inodoro y en caso de lo necesites usar <a href="https://pubmed.ncbi.nlm.nih.gov/24971388/">
               algun metodo simple de desinfeccion</a> como vinagre blanco.
           </p>
-          <p id="toothbrush">
+          <p id="toothbrush"> </p>
         </div>
 
         <div style="margin-top:12px">
@@ -169,8 +177,7 @@
             Evita tambien los saborizantes ya que pueden tener <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6340220/"> impacto negativo a nivel celular</a>.
             Si bien el fluor es muy polemico respecto a sus efectos, creemos que en exceso puede ser perjudicial y recomendamos evitarlo tambien.
           </p>
-          <p id="toothpaste">
-          </p>
+          <p id="toothpaste"> </p>
         </div>
 
         <div style="margin-top:12px">
@@ -178,40 +185,46 @@
           <p>
               El hilo dental es una herramienta auxiliar, es recomendado usarlo ya que brinda precision adicional durante la limpieza. Es importante verificar el material,
               ya que los mas comunes <a href="https://pubmed.ncbi.nlm.nih.gov/39797715/"> pueden contener quimicos para siempre(PFAS)</a> que se acumulan en tu cuerpo y
-              son disuptores endocrinos.
+              son disuptores endocrinos. Recomendamos usar hilo dental, especificamente de seda de la paz(esta seda es ecologica) y sin saborizante.
           </p>
-          <p id='floss'>
-          </p>
-          <p>
-            Recomendamos usar hilo dental, especificamente de seda de la paz(esta seda es ecologica) y sin saborizante
-          </p>
+          <p id='floss'> </p>
         </div>
 
         <div style="margin-top:12px">
           <label>Sobre el enjuague bucal</label>
           <p>
             En general debido a su contenido <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7125030/"> implican mayor exposicion a quimicos artificiales</a> y pueden ser
-            <a href="https://pubmed.ncbi.nlm.nih.gov/38369624/"> muy disruptivos para la microbiota bucal</a>, generalmente muchos incluso contienen alcohol.
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38369624/"> muy disruptivos para la microbiota bucal</a>, generalmente muchos incluso contienen alcohol. Nuestro
+            recomendacion es evitar el uso de enjuague bucal.
           </p>
-          <p id="mouthwash">
-          </p>
-          <p>
-            Nuestro recomendacion es evitar el uso de enjuague bucal.
-          </p>
+          <p id="mouthwash"></p>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Para ti</label>
+          <p id='forYou'> </p>
         </div>
 
         <div class="controls" style="justify-content:center;">
-            <button id="downloadBtn" class="btn-ghost" type="button"> Descargar reporte </button>
-            <button id="ctaBtn" class="btn-primary" type="button"> Soluciona los problemas detectados en mi rutina </button>
-            <!-- <p> -->
-            <!--     Si: -->
-            <!--     - priorizas tu salud -->
-            <!--     - dejar de acumular bacterias como el 99% de las personas y usar un cepillo cada dia que limpie bien y no tengas que desinfectarlo  -->
-            <!--     - lograr un detox total alejandote de microplasticos en los cepillos y liberarte de los quimicos artificiales en la pasta -->
-            <!--     - quieres incorporar los mejores habitos a tu rutina sin pensar al respecto y sin friccion -->
-            <!--     - quieres mantener tu salud sin afectar el medio ambiente usando una herramienta totalmente ecologica -->
-            <!--     - lograr un blanqueamiento natural y prevenir la sequedad de la boca -->
-            <!-- </p> -->
+            <button id="downloadBtn" class="btn-primary" type="button" style="display: flex; align-items: center;">
+                <svg style="width: 32px; height: 32px;fill: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                <span>¿Querés la informacion? Descargá el reporte</span>
+            </button>
+
+            <button id="ctaBtn" class="btn-ghost" type="button" style="display: flex; align-items: center;">
+                <svg style="width: 28px; height: 28px; fill: green;">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.687"/>
+                </svg>
+                
+                <span>¿Tenés dudas? Hablá con nosotros</span>
+            </button>
+
+            <button id='mlBtn' class="btn-ghost" type="button">
+                <div style="display: flex; align-items: center;">
+                    <img alt="Mercado Libre" class="ml-logo mr-2" width="32" height="32" src="https://cdn.brandfetch.io/idlij9Yj_W/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1677421846740"/>
+                    <span class="font-semibold text-gray-800">Mira lo que dicen nuestros clientes en MercadoLibre!</span>
+                </div>
+            </button>
         </div>
       <div id="results" class="results" aria-live="polite"></div>
     </div>
