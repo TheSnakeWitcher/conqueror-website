@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link href="./images/logo.ico" rel="icon">
+<title>Quiz: Rutina de Salud Bucal — Conqueror</title>
+<style>
+  :root{
+    --bg:#f5f7fb; --card:#ffffff; --accent:#2b6cb0; --muted:#6b7280;
+    --good:#16a34a; --bad:#dc2626; --warn:#f59e0b;
+    font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
+  }
+  .topbar {background-color: #fff;box-shadow: 0 2px 5px rgba(0,0,0,0.1); padding: 15px 0; position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: center;}
+  .logoimg { height: 40px; margin-right: 10px; }
+  @media (max-width: 768px) {
+      .topbar { height: 3rem; padding: 8px 0; background-color: var(--color-white); box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative; top: 0; z-index: 100;}
+      .logoimg {height: 30px; }
+  }
+  body{margin:0;background:linear-gradient(180deg,#eef4ff 0%,var(--bg) 100%);color:#0f172a;}
+  .container{max-width:920px;margin:36px auto;padding:20px;}
+  header{display:flex;align-items:center;gap:16px;margin-bottom:18px}
+  header .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#1e40af);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+  h1{margin:0;font-size:1.4rem}
+  p.lead{margin:6px 0 18px;color:var(--muted)}
+  .card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(12, 24, 50, 0.06)}
+  form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:720px){.row{grid-template-columns:1fr}}
+  label{display:block;font-weight:600;margin-bottom:6px}
+  select,input[type="text"],textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff}
+  .option-row{display:flex;gap:10px;flex-wrap:wrap}
+  .option{padding:8px 10px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;cursor:pointer}
+  .option input{margin-right:6px}
+  .controls{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  button{border:0;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600}
+  .btn-primary{background:var(--accent);color:white}
+  .btn-ghost{background:transparent;border:1px solid #d1d5db;color:var(--muted)}
+  .results{margin-top:18px}
+  .badge{display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700}
+  .score{font-size:2rem;font-weight:800}
+  ul{margin:0;padding-left:18px}
+  .issue{border-left:4px solid var(--bad);padding:12px;margin-bottom:10px;border-radius:8px;background:#fff7f7}
+  .good{border-left:4px solid var(--good);background:#f6fffa}
+  .warn{border-left:4px solid var(--warn);background:#fffaf0}
+  footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+  .small{font-size:0.9rem;color:var(--muted)}
+</style>
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '666759912447103');
+
+    const ok = "true"
+
+    const params = (new URLSearchParams(window.location.search))
+    const toothbrush_material = params.get('toothbrush-material')
+    const toothbrush_frecuency = params.get('toothbrush-frecuency')
+    const toothbrush_desinfection = params.get('toothbrush-desinfection')
+    const toothpaste = params.get('toothpaste')
+    const floss = params.get('floss')
+    const mouthwash = params.get('mouthwash')
+    const toothbrush_moment = params.get('toothbrush-moment')
+
+    let toothbrushMaterialText 
+    if (toothbrush_material == "plastico") {
+        toothbrushMaterialText = "En este caso que usas cepillo de plastico, este es el peor de todos, presenta todos los problemas anteriores y ni siquiera es ecologico. "
+    } else if (toothbrush_material == "bamboo") {
+        toothbrushMaterialText = "En este caso que usas cepillo de bamboo, este es entre las opciones comunes la mas ecologica, sin embargo presenta todos los problemas anteriores al igual que el resto de los cepillos(por ejemplo liberan microplasticos debido al material de las cerdas). "
+    } else { // electrico
+        toothbrushMaterialText = "En este caso que usas cepillo electrico, este limpia ligeramente mejor que las opciones mas comunes, sin embargo presenta todos los problemas anteriores al igual que el resto de cepillos y ademas constituye un gasto excesivo porque pagas caracteristicas como la bateria y electronica que no contribuyen a la limpieza y son inutiles luego del primer uso. "
+    } 
+
+    const toothbrushFrecuencyText = toothbrush_frecuency == "w" ? 
+            "Al cambiar el cepillo cada semana, sin embargo deberias acercarte mas a los 3 dias, o idealmente de forma diaria. " :
+            "Al cambiar el cepillo cada mas de 1 mes acumulas muchas bacterias debido al uso repetido, para obtener buenos resultados lo recomendable seria cambiarlo cada 3 dias, o idealemente de forma diaria. "
+
+    const toothbrushDesinfectionText = toothbrush_desinfection == "desinfecta" ? 
+            'Para ti que desinfectas el cepillo, esto es lo mejor que podrias hacer para disminuir la contaminacion del cepillo, solo asegurate de que lo desinfectas de forma adecuada. ' :
+            'Si cambias el cepillo con poca frecuencia tienes que al menos desinfectarlo luego de usarlo para tratar de disminuir su contaminacion y la cantidad de bacterias que acumula ya que por ejemplo enjuagarlo con agua luego de usarlo no surte efecto alguno, aunque tampoco hay forma perfecta de lograr esto porque segun el metodo se elimina solo algun tipo especifico de bacteria. '
+
+    let toothbrushText = toothbrushMaterialText + toothbrushFrecuencyText + toothbrushDesinfectionText
+
+
+    const toothpasteText = toothpaste == ok ? 
+        "Como usas pasta asegurate de buscar alguna con ingredientes naturales para evitar posibles problemas. " :
+        "Como no usas pasta evitas todo lo anterior, como la exposicion a quimicos artificiales, solo verifica que el metodo que uses brinde limpieza suficiente. "
+
+    const flossText = floss == ok ? 
+        "Al usar hilo dental esta muy bien, solo ten cuidado con el material para evitar efectos negativos. " :
+        "Al no usar hilo dental te ahorras los problemas asociados con el uso insconsciente del mismo, pero tambien pierdes las posibles ganancias de usarlo correctamente. "
+
+    const mouthwashText = mouthwash == ok ?
+        "Como usas enjuague bucal busca sobre los quimicos que contiene para evitar problemas innecesarios. " :
+        "Como no usas enjuague bucal te liberas de la exposicion a posibles quimicos artificiales. "
+
+    const forYouText = toothbrushText + toothpasteText + flossText + mouthwashText
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // document.getElementById('toothbrush').textContent = toothbrushText
+        // document.getElementById('toothpaste').textContent = toothpasteText
+        // document.getElementById('mouthwash').textContent = mouthwashText
+        // document.getElementById('floss').textContent = flossText
+        document.getElementById('forYou').textContent = forYouText
+
+        document.getElementById('ctaBtn').addEventListener('click', () => {
+            fbq('track', 'Contact');
+            window.open("https://wa.me/59891601167?text=hola,acabo de realizar el quiz y quiero saber mas" )
+        })
+
+        document.getElementById('mlBtn').addEventListener('click', () => {
+            fbq('track', 'Search');
+            window.open("https://articulo.mercadolibre.com.uy/MLU-696880020-miswak-sewak-cepillo-de-dientes-natural-higiene-bucal-_JM" )
+        })
+
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+          console.log('download started')
+          const html = document.documentElement.outerHTML;
+          const blob = new Blob([html], { type: "text/html" });
+
+          const a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = "mi-reporte-salud-bucal.html";
+          a.click();
+          URL.revokeObjectURL(a.href);
+        })
+    })
+</script>
+</head>
+<body>
+
+  <div class="topbar">
+    <div>
+       <img class="logoimg" src="../images/logo.png" alt="Conqueror Logo"> Conqueror
+     </div>
+
+  </div>
+
+  <div class="container">
+    <header>
+      <div> <h1>Reporte Sobre Rutina de Salud Bucal</h1> </div>
+
+        <button id="ctaBtn" class="btn-ghost" type="button" style="display: flex; align-items: center;">
+            <svg style="width: 28px; height: 28px; fill: green;">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.687"/>
+            </svg>
+            
+            <span>Participa del reto</span>
+        </button>
+    </header>
+
+    <div class="card" role="main">
+      <form id="quizForm" aria-labelledby="quiz-title">
+
+        <div style="margin-top:12px">
+          <label>Sobre el cepillo</label>
+          <p>
+              <a href="https://pubmed.ncbi.nlm.nih.gov/37680184/"> Desde el primer uso los cepillos de dientes se contaminan</a>, con cada uso posterior 
+              <a href="https://pubmed.ncbi.nlm.nih.gov/31879640/"> limpian mucho peor </a> y acumulan bacterias que
+              <a href="https://pubmed.ncbi.nlm.nih.gov/20139560/"> reintroducen en tu boca</a>.
+              Ademas todos los cepillos(incluso los electricos y de bamboo) tienen cerdas de plastico o derivados y <a href="https://pubmed.ncbi.nlm.nih.gov/37689132/">
+              liberan microplasticos en tu cuerpo durante el cepillado</a>, de todos los productos destinados a la higiene oral este es el que mas microplasticos tiene.
+              Como los cepillos que se usan varias veces limpian peor cada vez es MUY importante cambiarlos con gran frecuencia, cada 1-3 dias, para que el cepillo
+              limpie correctamente. Tambien cuando descargas el inodoro se liberan particulas de heces fecales en el ambiente que pueden caer en el cepillo, recuerda
+              descargar con la tapa cerrada y/o alejar el cepillo del inodoro y en caso de lo necesites usar <a href="https://pubmed.ncbi.nlm.nih.gov/24971388/">
+              algun metodo simple de desinfeccion</a> como vinagre blanco.
+          </p>
+          <p id="toothbrush"> </p>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Sobre la pasta</label>
+          <p>
+            Las pastas pueden <a href="https://tamararubin.com/2025/01/toothpaste-chart/">contener microplasticos y/o metales pesados(como plomo, arsenico y mercurio)</a>,
+            aunque en general <a href="https://pubmed.ncbi.nlm.nih.gov/38092338/"> muchos productos de higiene oral contienen microplasticos </a>.
+            Las pastas y enjuagues bucales <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7569277/">pueden contener ingredientes toxicos para el tejido de la mucosa oral</a>
+            y las pastas blanqueadoras pueden <a href="https://pubmed.ncbi.nlm.nih.gov/35265322/">afectar el contenido mineral de los dientes</a>.
+            Evita tambien los saborizantes ya que pueden tener <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6340220/"> impacto negativo a nivel celular</a>.
+            Si bien el fluor es muy polemico respecto a sus efectos, creemos que en exceso puede ser perjudicial y recomendamos evitarlo tambien.
+          </p>
+          <p id="toothpaste"> </p>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Sobre el hilo dental</label>
+          <p>
+              El hilo dental es una herramienta auxiliar, es recomendado usarlo ya que brinda precision adicional durante la limpieza. Es importante verificar el material,
+              ya que los mas comunes <a href="https://pubmed.ncbi.nlm.nih.gov/39797715/"> pueden contener quimicos para siempre(PFAS)</a> que se acumulan en tu cuerpo y
+              son disuptores endocrinos. Recomendamos usar hilo dental, especificamente de seda de la paz(esta seda es ecologica) y sin saborizante.
+          </p>
+          <p id='floss'> </p>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Sobre el enjuague bucal</label>
+          <p>
+            En general debido a su contenido <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7125030/"> implican mayor exposicion a quimicos artificiales</a> y pueden ser
+            <a href="https://pubmed.ncbi.nlm.nih.gov/38369624/"> muy disruptivos para la microbiota bucal</a>, generalmente muchos incluso contienen alcohol. Nuestro
+            recomendacion es evitar el uso de enjuague bucal.
+          </p>
+          <p id="mouthwash"></p>
+        </div>
+
+        <div style="margin-top:12px">
+          <label>Para ti</label>
+          <p id='forYou'> </p>
+        </div>
+
+        <div class="controls" style="justify-content:center;">
+            <button id="downloadBtn" class="btn-primary" type="button" style="display: flex; align-items: center;">
+                <svg style="width: 24px; height: 24px;fill: white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M169.4 470.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 370.8 224 64c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 306.7L54.6 265.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                <span>Descargá el reporte</span>
+            </button>
+
+            <button id="ctaBtn" class="btn-ghost" type="button" style="display: flex; align-items: center;">
+                <svg style="width: 28px; height: 28px; fill: green;">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.525 3.687"/>
+                </svg>
+                
+                <span>Participá del reto</span>
+
+            </button>
+
+            <button id='mlBtn' class="btn-ghost" type="button">
+                <div style="display: flex; align-items: center;">
+                    <img alt="Mercado Libre" class="ml-logo mr-2" width="32" height="32" src="https://cdn.brandfetch.io/idlij9Yj_W/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1677421846740"/>
+                    <span class="font-semibold text-gray-800">Mira nuestras reviews!</span>
+                </div>
+            </button>
+        </div>
+      <div id="results" class="results" aria-live="polite"></div>
+    </div>
+  </div>
+</body>
+</html>
