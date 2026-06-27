@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursos | Conqueror Miswak</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary:  #483D8B;
+      --primary-light: #5D52A5;
+      --primary-faint: #EFF0F8;
+      --surface:   #ffffff;
+      --bg:        #f8f9fa;
+      --text:      #1e1b33;
+      --muted:     #6b6585;
+      --radius:    18px;
+      --shadow:    0 8px 32px rgba(72,61,139,.12);
+      --font:      'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ─────────────────────────────── */
+    .header {
+      background: var(--surface);
+      box-shadow: 0 2px 8px rgba(0,0,0,.07);
+      padding: 14px 0;
+      position: sticky; top:0; z-index:100;
+    }
+    .header .inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .logo-icon svg { width:20px; height:20px; fill:#fff; }
+    .home-link {
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity .2s;
+    }
+    .home-link:hover { opacity: .7; }
+
+    /* ── HERO ────────────────────────────────── */
+    .hero {
+      background: var(--primary);
+      background-image:
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+        linear-gradient(135deg, #483D8B 0%, #6B5FCF 100%);
+      padding: 64px 2rem 56px;
+      text-align: center;
+      color: #fff;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50px;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 5px 16px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.6rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      letter-spacing: -.02em;
+    }
+    .hero p {
+      font-size: 1.05rem;
+      opacity: .82;
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ── GRID ────────────────────────────────── */
+    .grid-section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 56px 2rem 72px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 620px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── CARD ────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 32px 28px 28px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: transform .25s ease, box-shadow .25s ease;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 48px rgba(72,61,139,.18);
+    }
+
+    .card::before {
+      content: attr(data-n);
+      position: absolute;
+      right: -6px; top: -16px;
+      font-size: 7rem;
+      font-weight: 900;
+      color: var(--primary-faint);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: -.05em;
+    }
+
+    .card-icon {
+      width: 52px; height: 52px;
+      background: var(--primary-faint);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      transition: background .25s;
+    }
+    .card:hover .card-icon {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .card-header .card-icon {
+      flex-shrink: 0;
+    }
+    .card-header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+    }
+    .card-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .card-desc {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: .875rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-top: 4px;
+      transition: gap .2s;
+    }
+    .card:hover .card-cta { gap: 12px; }
+
+    /* ── FEATURED CARD (video + tips) ───────── */
+    .card.featured {
+      grid-column: 1 / -1;
+      padding: 0;
+      gap: 0;
+      flex-direction: column;
+      background: var(--primary);
+      color: #fff;
+    }
+    .card.featured::before { color: rgba(255,255,255,.07); }
+    .card.featured:hover { transform: translateY(-6px); }
+
+    .featured-main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 28px;
+      padding: 32px 28px 26px;
+    }
+    .featured-main > div { flex: 1; }
+
+    .card.featured .card-label { color: rgba(255,255,255,.6); }
+    .card.featured .card-title { color: #fff; font-size: 1.3rem; }
+    .card.featured .card-desc  { color: rgba(255,255,255,.75); }
+    .card.featured .card-cta   { color: #fff; }
+    .card.featured .card-icon  {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      width: 64px; height: 64px;
+      border-radius: 18px;
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+    .card.featured:hover .card-icon { background: rgba(255,255,255,.28); }
+
+    /* tips strip */
+    .featured-tips {
+      border-top: 1px solid rgba(255,255,255,.14);
+      padding: 16px 28px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .tips-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 24px;
+    }
+    .tip-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .tip-badge {
+      width: 28px; height: 28px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem;
+      color: rgba(255,255,255,.85);
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: background .25s;
+    }
+    .card.featured:hover .tip-badge { background: rgba(255,255,255,.2); }
+    .tip-body strong {
+      display: block;
+      font-size: .82rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2px;
+    }
+    .tip-body span {
+      font-size: .77rem;
+      color: rgba(255,255,255,.58);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 620px) {
+      .featured-main { flex-direction: column; align-items: flex-start; }
+      .tips-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── FOOTER ──────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 2rem;
+      font-size: .82rem;
+      color: var(--muted);
+      border-top: 1px solid #e8e6f0;
+    }
+    footer strong { color: var(--primary); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="inner">
+      <a href="/" class="logo">
+        <div>
+          <img src="./images/logo.png" alt="logo-img" style="heigh:50px;width:50px;">
+        </div>
+        Conqueror
+      </a>
+      <a href="/" class="home-link">
+        <i class="fa-solid fa-house" style="font-size:.8rem;"></i>
+        Volver al inicio
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <span class="hero-eyebrow">Centro de recursos</span>
+    <h1>Todo lo que necesitas<br>en un solo lugar</h1>
+    <p>Saca el máximo provecho de tu Miswak. Aquí encontrarás guías, diagnósticos y más, pensados especialmente para ti.</p>
+  </section>
+
+  <!-- RESOURCE GRID -->
+  <section class="grid-section">
+    <div class="grid">
+
+      <!-- 1. VIDEO — featured full-width con tips -->
+      <a href="https://youtu.be/yy9QAu5KLG8?si=u1nixAncX_0eJyS" target="_blank" rel="noopener" class="card featured" data-n="1">
+
+        <div class="featured-main">
+          <div class="card-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div>
+            <span class="card-label">Tutorial</span>
+            <div class="card-title">Cómo usar tu Miswak correctamente</div>
+            <div class="card-desc">Un video paso a paso para que aproveches al máximo los beneficios de tu Miswak desde el primer uso</div>
+            <div class="card-cta">Ver video <i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+        </div>
+
+        <div class="featured-tips">
+          <span class="tips-label">Tips  </span>
+          <div class="tips-grid">
+            <div class="tip-item">
+              <div class="tip-badge"><i class="fa-solid fa-scissors"></i></div>
+              <div class="tip-body">
+                <strong>Pelalo con tu boca</strong>
+                <span>Usa solo tu boca para pelar una nueva seccion y que no entre en contacto con nada mas</span>
+              </div>
+            </div>
+            <div class="tip-item">
+              <div class="tip-badge"><i class="fa-solid fa-rotate"></i></div>
+              <div class="tip-body">
+                <strong>Renueva cada 1-3 días</strong>
+                <span>Corta secciones cortas frecuentemente para usar fibras frescas y obtener maximos resultados</span>
+              </div>
+            </div>
+            <div class="tip-item">
+              <div class="tip-badge"><i class="fa-solid fa-droplet"></i></div>
+              <div class="tip-body">
+                <strong>Guárdalo en su sobre</strong>
+                <span>Humedece la punta MUY ligeramente luego de usarlo y guardalo en el mismo sobre que viene</span>
+              </div>
+            </div>
+            <div class="tip-item">
+              <div class="tip-badge"><i class="fa-solid fa-sun"></i></div>
+              <div class="tip-body">
+                <strong>Usalo con delicadeza</strong>
+                <span>Frota sin presión excesiva sobre dientes y encías(como en el video) para evitar lastimarte</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </a>
+
+      <!-- 2. DIAGNÓSTICO -->
+      <a href="https://www.conqueror.lifestyle/offer-quiz.html" target="_blank" class="card" data-n="2">
+        <div class="card-header">
+          <div class="card-icon"> <i class="fa-solid fa-stethoscope"></i> </div>
+          <div class="card-header-text">
+            <span class="card-label">Gratis</span>
+            <div class="card-title">Health coaching gratuito sobre tu salud bucal</div>
+          </div>
+        </div>
+        <div class="card-desc">Responde unas pocas preguntas y descubre qué dice la salud de tu boca sobre ti. Sin costo ni registros. Lo puedes guardar o compartir</div>
+        <div class="card-cta">Obtener reporte personalizado gratis<i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+
+      <!-- 3. REVIEW -->
+      <a href="https://g.page/r/CWMEivYUmfhfEAE/review" target="_blank" class="card" data-n="3">
+        <div class="card-header">
+          <div class="card-icon">
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="card-header-text">
+            <span class="card-label">Tu opinión importa</span>
+            <div class="card-title">Deja tu reseña</div>
+          </div>
+        </div>
+        <div class="card-desc">¿Cómo fue tu experiencia? Comparte tu opinión y ayuda a otros a descubrir los beneficios del Miswak.</div>
+        <div class="card-cta">Escribir reseña <i class="fa-solid fa-arrow-right"></i></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <strong>Conqueror Miswak</strong> · Tu portal a una vida sana
+  </footer>
+
+</body>
+</html>
